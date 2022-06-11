@@ -1,0 +1,54 @@
+.comp1bigdiv{
+    height: 600px;
+    width: 100%;
+    padding: 1%;
+    display: flex;
+    gap: 10px;
+}
+.threeday{
+    border: 1px solid rgb(196,196,196);
+    width: 40%;
+    background: url('https://pisces.bbystatic.com/image2/BestBuy_US/dam/GL-71149-ghp-3day-030422-3f0b1ace-0a3f-4bcb-a9d2-2e9d644dcb61.jpg');
+}
+
+.threedayright{
+    width: 60%;
+    height: 100%;
+    padding: 1%;
+    border: 1px solid rgb(196,196,196);
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 50% 50%;
+    justify-content: space-around;
+    font-weight: 500;
+}
+.threedayright>div{
+    border: 1px solid rgb(196,196,196);
+}
+
+.populartop{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    justify-content: space-around;
+}
+.populartop>div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.populartop>div>img{
+    width: 90%;
+    height:40%;
+}
+.topdeal{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    padding: 1%;
+    justify-content: space-around;
+}
+.topdeal>div>img{
+    height: 50%;
+    width: 90%;
+}
