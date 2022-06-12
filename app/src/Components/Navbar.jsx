@@ -2,18 +2,9 @@ import {
   Box,
   Flex,
   Text,
-  IconButton,
   Button,
   Stack,
-  Collapse,
-  Icon,
-  Link,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
   Input,
   Image,
   MenuItem,
@@ -24,6 +15,7 @@ import {
   Spacer,
   Divider,
 } from "@chakra-ui/react";
+import {Link} from 'react-router-dom';
 import { FaAngleDown, FaArrowRight, FaBars, FaSearch } from "react-icons/fa";
 
 export const Navbar = () => {
@@ -42,7 +34,7 @@ export const Navbar = () => {
       >
         <Spacer display={"flex"} w="20%">
           <Stack>
-            <Link to="#">
+            <Link to="/">
               <Image
                 boxSize="70px"
                 bg={"none"}
@@ -88,34 +80,34 @@ export const Navbar = () => {
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
-                    Appliances <FaArrowRight />
+                    <Link to='#'>Appliances </Link><FaArrowRight />
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
                     {" "}
-                    Cell Phones <FaArrowRight />{" "}
+                    <Link to='/phone'>Cell Phones</Link> <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
-                    TV & Home Theater <FaArrowRight />{" "}
+                  <Link to='/tv'> TV & Home Theater</Link> <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
-                    Computers & Tablets <FaArrowRight />{" "}
+                  <Link to='/computer'>  Computers & Tablets</Link> <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
-                    Computers & Tablets <FaArrowRight />{" "}
+                  <Link to='/computer'> Computers & Tablets</Link> <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
                     {" "}
-                    Cameras, Camcarders & Drones <FaArrowRight />{" "}
+                    <Link to='/camera'>   Cameras, Camcarders & Drones </Link><FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
               </MenuList>
@@ -139,7 +131,7 @@ export const Navbar = () => {
             color="white"
             fontSize={"4xl"}
           >
-            <Flex>Cart</Flex>
+            <Flex><Link to='#'>Cart</Link></Flex>
           </Stack>
         </Spacer>
       </Flex>
@@ -203,14 +195,14 @@ export const Navbar = () => {
                   </Text>
                 </MenuItem>
                 <MenuItem>
-                  <Button w="80%" color="black">
+                  <Box w="100%" color="black">
                     <Link to="#">Sign In</Link>
-                  </Button>
+                  </Box>
                 </MenuItem>
                 <MenuItem>
-                  <Button w="80%" color="black">
+                  <Box w="100%" color="black">
                     <Link to="#">Create an Account</Link>
-                  </Button>
+                  </Box>
                 </MenuItem>
                 <MenuItem>
                   <Flex color="black" justify={"space-around"}>
