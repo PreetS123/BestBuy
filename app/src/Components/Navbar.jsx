@@ -201,7 +201,7 @@ export const Navbar = () => {
                 </MenuItem>
                 <MenuItem>
                   <Box w="100%" color="black">
-                    <Link to="#">Create an Account</Link>
+                    <Link to="/signup">Create an Account</Link>
                   </Box>
                 </MenuItem>
                 <MenuItem>

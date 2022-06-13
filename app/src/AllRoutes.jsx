@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { SignUp } from './Authentication/SignUp'
 import { Footer } from './Components/Footer'
 import { Navbar } from './Components/Navbar'
 import { Home } from './LandingPage/Home'
@@ -19,7 +20,7 @@ export const AllRoutes = () => {
             <Route path='/computer' element={<Computer/>}/>
             <Route path='/camera' element={<Camera/>}/>
            
-            {/* <Route path='/' element={<Home/>}/> */}
+            <Route path='/signup' element={<SignUp/>}/>
             {/* <Route path='/' element={<Home/>}/> */}
         </Routes>
         <Footer/>
