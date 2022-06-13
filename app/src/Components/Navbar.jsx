@@ -46,7 +46,7 @@ export const Navbar = () => {
           <Stack>
             <Menu>
               <MenuButton px={4} py={2} bg={"#0944B4"} color="white">
-                <Flex fontSize={"20px"} alignItems="center" gap="10px">
+                <Flex fontSize={"4xl"} alignItems="center" gap="10px">
                   <Box>
                     <FaBars />
                   </Box>
