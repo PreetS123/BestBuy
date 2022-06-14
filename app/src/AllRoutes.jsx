@@ -8,13 +8,13 @@ import { Camera } from './Pages/Camera/Camera'
 import { Phone } from './Pages/CellPhone/Phone'
 import { Computer } from './Pages/ComputerTablet/Computer';
 import { Tv } from './Pages/HomeTheater/Tv';
-import { Card } from './Pages/components/Card'
+// import { Card } from './Pages/components/Card'
 
 export const AllRoutes = () => {
   return (
     <div>
         <Navbar/>
-           <Card/>
+           {/* <Card/> */}
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/phone' element={<Phone/>}/>
