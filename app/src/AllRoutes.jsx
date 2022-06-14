@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { SignUp } from './Authentication/SignUp'
+import { SignUp } from './Signup_Login/SignUp'
 import { Footer } from './Components/Footer'
 import { Navbar } from './Components/Navbar'
 import { Home } from './LandingPage/Home'
