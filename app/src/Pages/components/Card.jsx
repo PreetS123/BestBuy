@@ -11,20 +11,33 @@ import {
 } from "@chakra-ui/react";
 import { nanoid } from "nanoid";
 import { FaRegObjectGroup, FaTruck } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useParams } from "react-router-dom";
+import { addProductCart } from "../../Redux/products/action";
+
+
 export const Card = ({
-  image,
-  desc,
-  model,
-  rate,
-  count,
-  pickup,
-  shipping,
-  price,
-  saving,
-  print,
-  offer,
+  product
+  //     id,
+  // image,
+  // desc,
+  // model,
+  // rate,
+  // count,
+  // pickup,
+  // shipping,
+  // price,
+  // saving,
+  // print,
+  // offer,
 }) => {
+const uniqueid=nanoid()
+  
+// const params=useParams(id)
+  const dispatch=useDispatch();
+  const addToCartHandler=(payload)=>{
+    dispatch(addProductCart(payload))
+  }
   return (
     <Flex w={"100%"} py={4}>
       <Stack
@@ -38,25 +51,25 @@ export const Card = ({
         gap={6}
       >
         <Flex flex={1}>
-          <Image objectFit="cover" boxSize="100%" src={image} />
+          <Image objectFit="cover" boxSize="100%" src={product.image} />
         </Flex>
         <Stack flex={1} flexDirection="column" p={1} pt={2}>
           <Text>Sponsered</Text>
 
           <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
-            {desc}
+            {product.desc}
           </Text>
-          <Text>{count}</Text>
+          <Text>{product.count}</Text>
           <Flex
             justifyContent={"space-around"}
             color={useColorModeValue("gray.700", "gray.400")}
             px={3}
           >
             <Box>
-              <span>Model: </span> {model}
+              <span>Model: </span> {product.model}
             </Box>
             <Box>
-              <span>SKU: </span> {nanoid()}
+              <span>SKU: </span> {uniqueid}
             </Box>
           </Flex>
           <Stack direction={"column"} mt={6}>
@@ -69,7 +82,7 @@ export const Card = ({
                   {" "}
                   <FaRegObjectGroup />{" "}
                 </Text>
-                <Heading fontSize={"16px"}>Pickup:</Heading> {pickup}
+                <Heading fontSize={"16px"}>Pickup:</Heading> {product.pickup}
               </Flex>
               <Text color={"gray.400"}>
                 Act Fast - Only few left at your store!
@@ -81,7 +94,7 @@ export const Card = ({
                 <Text fontSize="2xl" marginRight={"5px"}>
                   <FaTruck />
                 </Text>
-                <Heading fontSize={"16px"}>Shipping: </Heading> {shipping}
+                <Heading fontSize={"16px"}>Shipping: </Heading> {product.shipping}
               </Flex>
               <Text color={"gray.400"}>
                 This item is only available in certain markets.
@@ -91,16 +104,30 @@ export const Card = ({
           </Stack>
         </Stack>
         <Stack flex={1} flexDirection="column" p={1} pt={2}>
-          <Heading>${price}</Heading>
+          <Heading>${product.price}</Heading>
           <Text>with activation today</Text>
           <Flex display={"flex"}>
             <Button h={"30px"} bg={"maroon"} color="white" fontWeight={500}>
-              Save ${saving}
+              Save ${product.saving}
             </Button>{" "}
-            <Text>Was ${print}</Text>
+            <Text>Was ${product.print}</Text>
           </Flex>
-          <Text fontWeight={500}>{offer}</Text>
-          <Button w="80%" bg={"blue"} color="white">
+          <Text fontWeight={500}>{product.offer}</Text>
+          <Button 
+           rounded={'none'}
+           w={'full'}
+           mt={8}
+           size={'lg'}
+           py={'7'}
+           bg={useColorModeValue('yellow', 'orange.900')}
+           color={useColorModeValue('white', 'white.500')}
+           textTransform={'uppercase'}
+           _hover={{
+             transform: 'translateY(2px)',
+             boxShadow: 'lg',
+           }} 
+           onClick={()=>addToCartHandler(product)}
+           >
             {" "}
             ADD TO CART
           </Button>

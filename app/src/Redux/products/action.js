@@ -88,3 +88,64 @@ export const fetchTVData=(payload)=>{
     }
 }
 
+
+export const addProductCartRequest=(payload)=>({
+    type:types.ADD_PRODUCT_CART_REQUEST,
+    payload
+})
+export const addProductCartSuccess=(payload)=>({
+    type:types.ADD_PRODUCT_CART_SUCCESS,
+    payload
+})
+export const addProductCartFailure=(payload)=>({
+    type:types.ADD_PRODUCT_CART_FAILURE,
+    payload
+})
+export const addProductCart=(payload)=>(dispatch)=>{
+    console.log("cartDetails:",payload);
+    dispatch(addProductCartRequest())
+    Axios.post('/cart',payload)
+    .then(r=>dispatch(addProductCartSuccess(r.data)))
+    .catch(e=>dispatch(addProductCartFailure(e.data)))
+}
+
+export const getProductCartRequest=(payload)=>({
+    type:types.GET_PRODUCT_CART_REQUEST,
+    payload
+})
+export const getProductCartSuccess=(payload)=>({
+    type:types.GET_PRODUCT_CART_SUCCESS,
+    payload
+})
+export const getProductCartFailure=(payload)=>({
+    type:types.GET_PRODUCT_CART_FAILURE,
+    payload
+})
+export const getProductCart=(payload)=>(dispatch)=>{
+    
+    dispatch(getProductCartRequest())
+    Axios.get('/cart',payload)
+    .then(r=>dispatch(getProductCartSuccess(r.data)))
+    .catch(e=>dispatch(getProductCartFailure(e.data)))
+}
+
+export const deleteProductCartRequest=(payload)=>({
+    type:types.REMOVE_PRODUCT_CART_REQUEST,
+    payload
+})
+export const deleteProductCartSuccess=(payload)=>({
+    type:types.REMOVE_PRODUCT_CART_SUCCESS,
+    payload
+})
+export const deleteProductCartFailure=(payload)=>({
+    type:types.REMOVE_PRODUCT_CART_FAILURE,
+    payload
+})
+export const deleteProductCart=(id)=>(dispatch)=>{
+   
+    dispatch(deleteProductCartRequest())
+    Axios.get(`/cart/${id}`)
+    .then(r=>dispatch(deleteProductCartSuccess(r.data)))
+    .then(()=>dispatch(getProductCart()))
+    .catch(e=>dispatch(deleteProductCartFailure(e.data)))
+}

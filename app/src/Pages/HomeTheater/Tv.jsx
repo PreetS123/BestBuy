@@ -47,7 +47,7 @@ export const Tv = () => {
           </Box>
           <Flex flexWrap="wrap" justifyContent="space-around">
             {tvdata.map((product) => {
-              return <Card key={nanoid()} {...product} />;
+              return <Card key={nanoid()} product={product} />;
             })}
           </Flex>
         </Box>

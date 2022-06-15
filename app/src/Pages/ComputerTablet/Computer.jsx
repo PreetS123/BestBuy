@@ -47,7 +47,7 @@ export const Computer = () => {
           </Box>
           <Flex flexWrap="wrap" justifyContent="space-around">
             {laptop.map((product) => {
-              return <Card key={nanoid()} {...product} />;
+              return <Card key={nanoid()} product={product} />;
             })}
           </Flex>
         </Box>

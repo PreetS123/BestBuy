@@ -4,6 +4,7 @@ const initState={
     tvdata:[],
     phone:[],
     laptop:[],
+    cart:[],
     error:'',
     loading:false
 }
@@ -67,6 +68,50 @@ const initState={
                     ...state,
                     error:payload,
                     loading:false             
+                }
+                case types.ADD_PRODUCT_CART_REQUEST: {
+                    return {
+                        ...state,
+                        loading: true,
+                        error: ''
+                    }
+                }
+                case types.ADD_PRODUCT_CART_SUCCESS: {
+                    return {
+                        ...state,
+                        loading: false,
+                        cart: [...state.cart, payload],
+                        error: ''
+                    }
+                }
+                case types.ADD_PRODUCT_CART_FAILURE: {
+                    return {
+                        ...state,
+                        loading: false,
+                        error: payload
+                    }
+                }
+                case types.GET_PRODUCT_CART_REQUEST: {
+                    return {
+                        ...state,
+                        loading: true,
+                        error: ''
+                    }
+                }
+                case types.GET_PRODUCT_CART_SUCCESS: {
+                    return {
+                        ...state,
+                        loading: false,
+                        cart: [...payload],
+                        error: ''
+                    }
+                }
+                case types.GET_PRODUCT_CART_FAILURE: {
+                    return {
+                        ...state,
+                        loading: false,
+                        error: payload
+                    }
                 }
             default:
                 return state;

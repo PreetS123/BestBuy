@@ -131,7 +131,7 @@ export const Navbar = () => {
             color="white"
             fontSize={"4xl"}
           >
-            <Flex><Link to='#'>Cart</Link></Flex>
+            <Flex><Link to='/cart'>Cart</Link></Flex>
           </Stack>
         </Spacer>
       </Flex>
