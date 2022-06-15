@@ -1,30 +1,22 @@
-import { Button, Heading, Image, Select, Text ,Flex,Stack} from "@chakra-ui/react";
+import { Button, Heading, Image, Select, Text ,Flex,Stack, Center} from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom";
-
-import {useDispatch} from 'react-redux';
-import { deleteProductCart } from "../../Redux/products/action";
 
 
-export const CartCard = ({ product }) => {
-  const dispatch=useDispatch()
-    const deleteCart=({id})=>{
-        // axios.delete(`http://localhost:8080/cart/${product.id}`)
-       console.log(id)
-        dispatch(deleteProductCart(id))
-    }
+
+export const CartCard = ({ id,image,desc,pickup,shipping,price,saving,print,deleteCart }) => {
+  
   return (
-    <div>
-      <Flex h={'250px'} justify={'space-evenly'} p={4} >
+    <Center>
+      <Flex w={'80%'} h={'250px'} justify={'space-evenly'} gap='20px' p={4} >
         <Stack flex={2}>
-          <Image maxH={'200px'} src={product.image} />
+          <Image maxH={'200px'} src={image} />
         </Stack>
         <Stack flex={1}>
-          <Text>{product.desc}</Text>
+          <Text>{desc}</Text>
         </Stack>
         <Flex direction={'column'}>
-            <Text><span fontWeight={'500'}>PickUp:</span>{product.pickup}</Text>
-            <Text><span fontWeight={'500'}>Shipping:</span>{product.shipping}</Text>
+            <Text><span fontWeight={'500'}>PickUp:</span>{pickup}</Text>
+            <Text><span fontWeight={'500'}>Shipping:</span>{shipping}</Text>
         </Flex>
         <Stack flex={1}>
           <Select>
@@ -32,14 +24,14 @@ export const CartCard = ({ product }) => {
             <option value={2}>2</option>
             <option value={3}>3</option>
           </Select>
-          <button onClick={deleteCart(product.id)}>Remove</button>
+          <button onClick={()=>deleteCart(id)}>Remove</button>
         </Stack>
         <Stack>
-          <Heading fontSize={13}>${product.price}</Heading>
-          <Button bg={"maroon"}>Save ${product.saving}</Button>
-          <Text>Was ${product.print}</Text>
+          <Heading fontSize={13}>${price}</Heading>
+          <Button bg={"maroon"}>Save ${saving}</Button>
+          <Text>Was ${print}</Text>
         </Stack>
       </Flex>
-    </div>
+    </Center>
   );
 };

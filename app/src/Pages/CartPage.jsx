@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getProductCart } from "../Redux/products/action";
+import { deleteProductCart, getProductCart } from "../Redux/products/action";
 import { CartCard } from "./components/CartCard";
 import { nanoid } from "nanoid";
 
@@ -17,25 +17,31 @@ export const CartPage = () => {
       dispatch(getProductCart());
     }
   }, [dispatch, cart?.length]);
-  console.log(cart);
+  
+
+    const deleteCart=(id)=>{
+        dispatch(deleteProductCart(id))
+        console.log("deleteproduct:",id)
+    }
+    console.log(cart);
   return (
-    <div>
-      <Flex flexDirection={"row"}>
-        <Stack flex={4}>{
-              cart.map(item=>(<CartCard key={nanoid()} product={item}/>))
+    <>
+      <Flex  flexDirection={"row"} gap='20px' p={6}>
+        <Stack flex={4} >{
+              cart.map(item=>(<CartCard key={nanoid()} {...item} deleteCart={deleteCart}/>))
         }</Stack>
-        <Stack flex={1} spacing={3}>
+        <Stack flex={1} justify={'space-around'} p={4} spacing={3} border={'1px solid'} borderColor={'gray.500'}>
           <Center>
             <Heading>Order Summary </Heading>
           </Center>
           <Stack>
             <Flex justify={"space-around"}>
               <Text>Original Price</Text>
-              <Text>$</Text>
+              <Text>$1981.98</Text>
             </Flex>
             <Flex justify={"space-around"}>
               <Text>Savings</Text>
-              <Text>-$</Text>
+              <Text>-$150</Text>
             </Flex>
             <Flex justify={"space-around"}>
               <Text>Shipping</Text>
@@ -43,21 +49,21 @@ export const CartPage = () => {
             </Flex>
             <Flex justify={"space-around"}>
               <Text>Estimated Sales Tax</Text>
-              <Text>$</Text>
+              <Text>$1162.98</Text>
             </Flex>
           </Stack>
           <Stack>
             <Flex justify={"space-around"}>
               <Heading fontSize={16}>Total</Heading>
-              <Heading fontSize={16}>$</Heading>
+              <Heading fontSize={16}>$1162.98</Heading>
             </Flex>
-            <Button bg={"yellow"}>
-              <Center>Checkout</Center>
+            <Button  bg={"yellow"}>
+              <Center><Link to='/checkout'>Checkout</Link></Center>
             </Button>
             <Text>Sign in to get My Best Buy™ Points</Text>
           </Stack>
           <Stack>
-            <Heading>Looking for a lease to own option?</Heading>
+            <Heading fontSize={18}>Looking for a lease to own option?</Heading>
             <Flex>
               <Text>Enjoy the tech you want today.</Text>
               <Link to="#">
@@ -66,7 +72,7 @@ export const CartPage = () => {
             </Flex>
           </Stack>
           <Stack>
-            <Heading>Buying a gift for someone special?</Heading>
+            <Heading fontSize={16}>Buying a gift for someone special?</Heading>
             <Text>Gift options can be added in checkout.</Text>
             <Link to="#">
               Learn more <FaArrowRight />
@@ -74,6 +80,6 @@ export const CartPage = () => {
           </Stack>
         </Stack>
       </Flex>
-    </div>
+    </>
   );
 };
