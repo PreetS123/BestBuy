@@ -102,7 +102,7 @@ export const Card = ({
           <Text fontWeight={500}>{offer}</Text>
           <Button w="80%" bg={"blue"} color="white">
             {" "}
-            See Details
+            ADD TO CART
           </Button>
         </Stack>
       </Stack>

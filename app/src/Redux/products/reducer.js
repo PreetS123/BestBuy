@@ -1,8 +1,9 @@
 import * as types from './actionTypes'
 
 const initState={
-    tv:[],
+    tvdata:[],
     phone:[],
+    laptop:[],
     error:'',
     loading:false
 }
@@ -29,7 +30,44 @@ const initState={
                 error:payload,
                 loading:false             
             }
-            
+            case types.LAPTOP_DATA_REQUEST:
+            return{
+                ...state,
+                error:'',
+                loading:true             
+            }
+            case types.LAPTOP_DATA_SUCCESS:
+            return{
+                ...state,
+                laptop:payload,
+                error:'',
+                loading:false            
+            }
+            case types.LAPTOP_DATA_FAILURE:
+            return{
+                ...state,
+                error:payload,
+                loading:false             
+            }
+            case types.TV_DATA_REQUEST:
+                return{
+                    ...state,
+                    error:'',
+                    loading:true             
+                }
+                case types.TV_DATA_SUCCESS:
+                return{
+                    ...state,
+                    tvdata:payload,
+                    error:'',
+                    loading:false            
+                }
+                case types.TV_DATA_FAILURE:
+                return{
+                    ...state,
+                    error:payload,
+                    loading:false             
+                }
             default:
                 return state;
     }

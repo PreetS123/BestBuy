@@ -8,6 +8,7 @@ import { Camera } from './Pages/Camera/Camera'
 import { Phone } from './Pages/CellPhone/Phone'
 import { Computer } from './Pages/ComputerTablet/Computer';
 import { Tv } from './Pages/HomeTheater/Tv';
+import Login from './Signup_Login/Login'
 // import { Card } from './Pages/components/Card'
 
 export const AllRoutes = () => {
@@ -23,7 +24,7 @@ export const AllRoutes = () => {
             <Route path='/camera' element={<Camera/>}/>
            
             <Route path='/signup' element={<SignUp/>}/>
-            {/* <Route path='/' element={<Home/>}/> */}
+            <Route path='/login' element={<Login/>}/>
         </Routes>
         <Footer/>
     </div>
