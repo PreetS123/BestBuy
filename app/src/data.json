@@ -460,20 +460,6 @@
   ],
   "cart": [
     {
-      "id": 1,
-      "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6483/6483636_sd.jpg;maxHeight=640;maxWidth=550",
-      "desc": "Google - Pixel 6 Pro 128GB (Unlocked) Stormy Black",
-      "model": "GA03149-US",
-      "rate": 4.2,
-      "count": 288,
-      "pickup": "Available today at Aiea",
-      "shipping": "Unavailable in your area",
-      "price": 799,
-      "saving": 100,
-      "print": 899,
-      "offer": "3 free month of YouTube Premium"
-    },
-    {
       "id": 2,
       "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501378_sd.jpg;maxHeight=640;maxWidth=550",
       "desc": "Samsung - Galaxy A13 32GB(Unlocked) - Black",
@@ -500,6 +486,34 @@
       "saving": 25,
       "print": 899,
       "offer": "3 free month of Netflix Premium"
+    },
+    {
+      "id": 4,
+      "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6441/6441178_rd.jpg;maxHeight=640;maxWidth=550",
+      "desc": "Motorola - Moto G Power 2021 (Unlocked) 64GB Memory - Flash Gray",
+      "model": "PALF0005US",
+      "rate": 4.3,
+      "count": 893,
+      "pickup": "Available today at Aria",
+      "shipping": "Available in your area",
+      "price": 169,
+      "saving": 80,
+      "print": 249,
+      "offer": "1 free year of Diseney Hotstar"
+    },
+    {
+      "id": 1,
+      "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6458/6458645_sd.jpg;maxHeight=640;maxWidth=550",
+      "desc": "Toshiba - 55' Class C350 Series LED 4K UHD Smart Fire TV",
+      "model": "55C350KU",
+      "rate": 4.5,
+      "count": 465,
+      "pickup": "Available today at Aiea",
+      "shipping": "Unavailable in your area",
+      "price": 339.99,
+      "saving": 130,
+      "print": 469.99,
+      "offer": "30 free days fuboTV Pro & 1 more"
     }
   ]
 }

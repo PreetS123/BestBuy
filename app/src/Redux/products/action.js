@@ -129,23 +129,4 @@ export const getProductCart=(payload)=>(dispatch)=>{
     .catch(e=>dispatch(getProductCartFailure(e.data)))
 }
 
-export const deleteProductCartRequest=(payload)=>({
-    type:types.REMOVE_PRODUCT_CART_REQUEST,
-    payload
-})
-export const deleteProductCartSuccess=(payload)=>({
-    type:types.REMOVE_PRODUCT_CART_SUCCESS,
-    payload
-})
-export const deleteProductCartFailure=(payload)=>({
-    type:types.REMOVE_PRODUCT_CART_FAILURE,
-    payload
-})
-export const deleteProductCart=(id)=>(dispatch)=>{
-   
-    dispatch(deleteProductCartRequest())
-    Axios.get(`/cart/${id}`)
-    .then(r=>dispatch(deleteProductCartSuccess(r.data)))
-    .then(()=>dispatch(getProductCart()))
-    .catch(e=>dispatch(deleteProductCartFailure(e.data)))
-}
+

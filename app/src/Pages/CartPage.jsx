@@ -3,11 +3,15 @@ import React, { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteProductCart, getProductCart } from "../Redux/products/action";
+import { getProductCart } from "../Redux/products/action";
 import { CartCard } from "./components/CartCard";
 import { nanoid } from "nanoid";
+import axios from "axios";
+import { useState } from "react";
 
 export const CartPage = () => {
+  const [cartData,setCartData]=useState([]);
+  // const [value, setValue] =useState(0);
   const cart = useSelector((store) => store.ecommerceData.cart);
   const dispatch = useDispatch();
   
@@ -16,19 +20,32 @@ export const CartPage = () => {
      
       dispatch(getProductCart());
     }
+    setCartData(cart)
   }, [dispatch, cart?.length]);
   
 
     const deleteCart=(id)=>{
-        dispatch(deleteProductCart(id))
-        console.log("deleteproduct:",id)
+        axios.delete(`http://localhost:8080/cart/${id}`).then(res=>{
+          const deleted=cart.filter((el) => el.id!==id)
+          setCartData(deleted)
+        })
+   
+        // console.log("deleteproduct:",id)
     }
-    console.log(cart);
+    // console.log(cart);
+    
+  // const call = (cartData) => {
+  //   var subTotal = cartData.reduce(function (acc, elem) {
+  //     return acc + elem.price ;
+  //   }, 0);
+  //   setValue(subTotal);
+  // };
+  //   console.log(value)
   return (
     <>
       <Flex  flexDirection={"row"} gap='20px' p={6}>
         <Stack flex={4} >{
-              cart.map(item=>(<CartCard key={nanoid()} {...item} deleteCart={deleteCart}/>))
+              cartData.map(item=>(<CartCard key={nanoid()} {...item} deleteCart={deleteCart}/>))
         }</Stack>
         <Stack flex={1} justify={'space-around'} p={4} spacing={3} border={'1px solid'} borderColor={'gray.500'}>
           <Center>
@@ -37,7 +54,7 @@ export const CartPage = () => {
           <Stack>
             <Flex justify={"space-around"}>
               <Text>Original Price</Text>
-              <Text>$1981.98</Text>
+              <Text>$1212.98</Text>
             </Flex>
             <Flex justify={"space-around"}>
               <Text>Savings</Text>
