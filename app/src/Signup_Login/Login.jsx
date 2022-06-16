@@ -105,9 +105,7 @@ export default function Login() {
             </Box>
           </Stack>
           <Divider marginTop={5} border={"1px solid"} />
-          {/* <Stack w={"100%"}> */}
           <All />
-          {/* </Stack> */}
         </Box>
       </Stack>
     </Flex>
