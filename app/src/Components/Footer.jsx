@@ -179,19 +179,19 @@ export const Footer = () => {
                   </Text>
                 </Flex>
                 <Stack direction={"row"} spacing={6}>
-                  <SocialButton label={"Instagram"} href={"#"}>
+                  <SocialButton label={"Facebook"} href={"https://www.facebook.com/bestbuy"}>
                     <FaFacebookF />
                   </SocialButton>
-                  <SocialButton label={"Twitter"} href={"#"}>
+                  <SocialButton label={"Twitter"} href={"https://twitter.com/BestBuy"}>
                     <FaTwitter />
                   </SocialButton>
-                  <SocialButton label={"Instagram"} href={"#"}>
+                  <SocialButton label={"Instagram"} href={"https://www.instagram.com/bestbuy/"}>
                     <FaInstagram />
                   </SocialButton>
-                  <SocialButton label={"Instagram"} href={"#"}>
+                  <SocialButton label={"Printerest"} href={"https://in.pinterest.com/bestbuy/"}>
                     <FaPinterestP />
                   </SocialButton>
-                  <SocialButton label={"YouTube"} href={"#"}>
+                  <SocialButton label={"YouTube"} href={"https://www.youtube.com/user/bestbuy"}>
                     <FaYoutube />
                   </SocialButton>
                 </Stack>
