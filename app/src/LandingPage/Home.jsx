@@ -371,6 +371,7 @@ export const Home = () => {
 
       <Flex
         h={"170px"}
+        w={'100%'}
         backgroundImage={`url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/gl62892-tt-skinny-bg-lg-4ed9a87a-ca73-4e7a-8610-0f2159f2239b.jpg")`}
       >
         <Flex padding={10} direction={"column"}>
