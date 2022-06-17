@@ -648,10 +648,10 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-93899-iphone13-pro-pol_der-f73f557f-62fd-4937-9f7d-1aba33288b71.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading>
+                <Heading color={'blue'}>
                   iPhone 13 Pro <br /> Save up to $800
                 </Heading>
-                <Text>with qualified activation and trade-in of iPhone</Text>
+                <Text color={'gray.500'}>with qualified activation and trade-in of iPhone</Text>
               </Box>
             </Flex>
             <Flex
@@ -668,8 +668,8 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol-MMT-552481_der-992f5ee6-c7cc-4a54-879e-5fb01fae0462.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading>Gifts for gaming dads.</Heading>
-                <Text>
+                <Heading color={'blue'}>Gifts for gaming dads.</Heading>
+                <Text color={'gray.500'}>
                   Find an assortment og games, from new hits to classic titles,
                   plus an array of accessories
                 </Text>
@@ -689,8 +689,8 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol_microsoft-happy-guy-v2-0620-3a7b8bc1-22dd-4fc9-8cf6-905382572981.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading>Introducing Surface Laptop Co 2.</Heading>
-                <Text>Sleek, light, on the go performance.</Text>
+                <Heading color={'blue'}>Introducing Surface Laptop Co 2.</Heading>
+                <Text color={'gray.500'}>Sleek, light, on the go performance.</Text>
               </Box>
             </Flex>
           </Flex>
@@ -709,11 +709,11 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/mmt-557424-apple-tv-pol_der-81ccc21e-4d16-428e-aaa0-93003a919044.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading>
+                <Heading color={'blue'}>
                   Apple TV 4K (2nd gen) <br />
                   Save $50 on the 32GB or 64GB model.
                 </Heading>
-                <Text>with qualified activation and trade-in of iPhone</Text>
+                <Text color={'gray.500'}>with qualified activation and trade-in of iPhone</Text>
               </Box>
             </Flex>
             <Flex
@@ -730,8 +730,8 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-549477_pol_COPE_DER-bb7580c0-afa1-4b6b-9775-d78aa1be89e3.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading>Save up to $100 on select wearables.</Heading>
-                <Text>
+                <Heading color={'blue'}>Save up to $100 on select wearables.</Heading>
+                <Text color={'gray.500'}>
                   Find an assortment og games, from new hits to classic titles,
                   plus an array of accessories
                 </Text>
@@ -751,8 +751,8 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-552448-speakers-pol-der-f2233e68-2161-4487-b9c7-4e1c2cf72a25.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading>Save up to 25% on select on speakers.</Heading>
-                <Text>
+                <Heading color={'blue'}>Save up to 25% on select on speakers.</Heading>
+                <Text color={'gray.500'}>
                   Take your audio to the next level with theater speakers.
                 </Text>
               </Box>
@@ -762,7 +762,7 @@ export const Home = () => {
       </Stack>
 
       <Stack p={4}>
-        <Heading fontSize={16}>Related to items you've viewed</Heading>
+        <Heading fontSize={25}>Related to items you've viewed</Heading>
         <Divider />
         <Flex h={300} p={2}>
           <Flex p={2} direction={"column"}>
@@ -843,7 +843,7 @@ export const Home = () => {
       </Stack>
 
       <Stack p={4}>
-        <Heading fontSize={16}>Trending deals</Heading>
+        <Heading fontSize={25}>Trending deals</Heading>
         <Divider />
         <Flex h={300} p={2}>
           <Flex p={2} direction={"column"}>
@@ -981,8 +981,8 @@ export const Home = () => {
 
 
 
-      <Stack marginBottom='100px' p={4}>
-        <Heading fontSize={16}>Featured Products</Heading>
+      <Stack marginBottom='100px' marginTop={'30px'} p={4}>
+        <Heading fontSize={22}>Featured Products</Heading>
         <Divider />
         <Flex h={300} p={2}>
           <Flex p={2} direction={"column"}>
