@@ -17,10 +17,11 @@ import {
 } from "@chakra-ui/react";
 import {Link} from 'react-router-dom';
 import { FaAngleDown, FaArrowRight, FaBars, FaSearch } from "react-icons/fa";
+// import {GrCart} from 'react-icons/gr';
 
 export const Navbar = () => {
   return (
-    <Box>
+    <Box marginBottom={'30px'}>
       <Flex
         bg={useColorModeValue("#0944B4 ", "#0944B4 ")}
         color={useColorModeValue("white.600", "white")}
@@ -131,7 +132,9 @@ export const Navbar = () => {
             color="white"
             fontSize={"4xl"}
           >
-            <Flex><Link to='/cart'>Cart</Link></Flex>
+            <Flex alignItems={'center'}>
+              {/* <Text ><GrCart color={'white'}/></Text> */}
+              <Link to='/cart'>Cart</Link></Flex>
           </Stack>
         </Spacer>
       </Flex>
