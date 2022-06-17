@@ -3,8 +3,6 @@ import {
   Button,
   Divider,
   Flex,
-  Grid,
-  GridItem,
   Heading,
   Image,
   Stack,
@@ -12,6 +10,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
+import {nanoid} from 'nanoid';
+
 
 var tppicks = [
   {
@@ -49,12 +49,12 @@ export const Home = () => {
           alignItems={"center"}
           backgroundImage={`url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-510776_2022TopDeals-GHPApp-LV-55adde1f-dd0b-48d7-9a08-b28bbc00187d.jpg")`}
         >
-          <Button h={10} w={20} varient={"outline"} color={"blue"}>
+          <Button h={10} w={20} bg={'white'} color={"blue"}>
             Shop Now
           </Button>
         </Stack>
-        <Flex direction={"column"} flex={3}>
-          <Flex flex={2} p={2} border={"1px solid"} borderColor={"gray.500"}>
+        <Flex direction={"column"} flex={3} gap='5px'>
+          <Flex flex={2} p={2} border={"1px solid"} borderColor={"gray.300"}>
             {tppicks.map((val) => {
               return (
                 <div
@@ -64,7 +64,7 @@ export const Home = () => {
                     textAlign: "center",
                   }}
                 >
-                  <Crd id={val.id} image={val.image} url={val.url} />
+                  <Crd key={nanoid()} image={val.image} url={val.url} />
                 </div>
               );
             })}
@@ -72,6 +72,7 @@ export const Home = () => {
           <Flex justify={"space-around"} flex={3}>
             <Box
               border={"1px solid"}
+              borderColor={'gray.300'}
               h={"70%"}
               display="flex"
               flexDirection={"column"}
@@ -89,6 +90,7 @@ export const Home = () => {
             </Box>
             <Box
               border={"1px solid"}
+              borderColor={'gray.300'}
               h={"70%"}
               display="flex"
               flexDirection={"column"}
@@ -108,13 +110,14 @@ export const Home = () => {
 
       <Stack bg={"white"} marginTop={"30px"} p={4}>
         <Heading
+        fontSize={25}
           borderBottom={"1px solid"}
           borderColor={"gray.200"}
           textDecoration={"underline"}
         >
           You viewed
         </Heading>
-        <Link to="#">Manage all your recently viewed items</Link>
+        <Text color="blue" cursor={'pointer'}>Manage all your recently viewed items</Text>
         <Flex height={300} gap="20px" p={4} justify={"space-around"}>
           <Flex
             direction={"column"}
@@ -211,6 +214,7 @@ export const Home = () => {
 
       <div
         style={{
+          width:'90%',
           height: "105px",
           display: "grid",
           gridTemplateColumns: "repeat(2,1fr)",
@@ -218,7 +222,7 @@ export const Home = () => {
           justifyContent: "space-around",
           fontWeight: "500",
           fontSize: "20px",
-          margin: "20px 10px",
+          margin: "20px auto",
         }}
       >
         <div
@@ -285,16 +289,16 @@ export const Home = () => {
         </div>
       </div>
 
+
+<Stack w={'100%'} h={'60px'} backgroundColor={'yellow'} >
       <div
         style={{
-          backgroundColor: "yellow",
-          height: "60px",
-          width: "100%",
-          margin: "10px 10px",
+          width: "50%",
+          margin:'auto',
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
-          display: "flex",
+          
         }}
       >
         <Heading>Insignia air fryers product recall .</Heading>
@@ -302,6 +306,9 @@ export const Home = () => {
           Learn more.
         </Link>
       </div>
+      </Stack>
+
+
       <Flex p={2} h={500} bg={"gray.100"} justify={"space-around"}>
         <Stack
           p={10}
@@ -329,6 +336,9 @@ export const Home = () => {
           </Button>
         </Stack>
       </Flex>
+
+
+
       <Stack border={"1px solid"} borderColor={"gray.200"}>
         <Flex direction={"row"} justify={"space-around"}>
           <Flex>
@@ -356,6 +366,9 @@ export const Home = () => {
         </Flex>
       </Stack>
 
+
+
+
       <Flex
         h={"170px"}
         backgroundImage={`url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/gl62892-tt-skinny-bg-lg-4ed9a87a-ca73-4e7a-8610-0f2159f2239b.jpg")`}
@@ -381,6 +394,9 @@ export const Home = () => {
           </Text>
         </Flex>
       </Flex>
+
+
+
 
       <Stack h={600} p={6}>
         {/* 1st parent div */}
@@ -545,6 +561,8 @@ export const Home = () => {
               backgroundColor: "#EFF1F1 ",
               display: "grid",
               gridTemplateColumns: "repeat(2,1fr)",
+              gap:'10px',
+              padding:'2%'
             }}
           >
             {/* 3rd */}
