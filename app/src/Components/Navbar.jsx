@@ -199,7 +199,7 @@ export const Navbar = () => {
                 </MenuItem>
                 <MenuItem>
                   <Box w="100%" color="black">
-                    <Link to="#">Sign In</Link>
+                    <Link to="/login">Sign In</Link>
                   </Box>
                 </MenuItem>
                 <MenuItem>

@@ -6,7 +6,7 @@ import React from "react";
 export const CartCard = ({ id,image,desc,pickup,shipping,price,saving,print,deleteCart }) => {
   
   return (
-    <Center>
+    <Center border={'1px solid'} borderColor={'gray.300'} bg={'white'}>
       <Flex w={'80%'} h={'250px'} justify={'space-evenly'} gap='20px' p={4} >
         <Stack flex={2}>
           <Image maxH={'200px'} src={image} />

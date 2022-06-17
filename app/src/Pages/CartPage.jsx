@@ -43,11 +43,11 @@ export const CartPage = () => {
   //   console.log(value)
   return (
     <>
-      <Flex  flexDirection={"row"} gap='20px' p={6}>
+      <Flex  flexDirection={"row"} gap='20px' p={6} bg={'gray.50'}>
         <Stack flex={4} >{
               cartData.map(item=>(<CartCard key={nanoid()} {...item} deleteCart={deleteCart}/>))
         }</Stack>
-        <Stack flex={1} justify={'space-around'} p={4} spacing={3} border={'1px solid'} borderColor={'gray.500'}>
+        <Stack bg={'white'} flex={1} justify={'space-around'} p={4} spacing={3} border={'1px solid'} borderColor={'gray.300'}>
           <Center>
             <Heading>Order Summary </Heading>
           </Center>
