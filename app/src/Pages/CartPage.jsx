@@ -52,7 +52,7 @@ export const CartPage = () => {
      console.log(value);
   return (
     <>
-      <Flex flexDirection={"row"} gap="20px" p={6} bg={"gray.50"}>
+      <Flex flexDirection={"row"} gap="20px" bg={"gray.50"} w={'90%'} m={'auto'}>
         <Stack flex={4}>
           {cart.map((item) => (
             <CartCard key={nanoid()} {...item} deleteCart={deleteCart} setValue={setValue} />
