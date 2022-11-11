@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Select, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Select, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { FilterCom } from "../components/FilterCom";
 import { nanoid } from "nanoid";

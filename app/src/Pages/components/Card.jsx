@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Center,
   Flex,
   Heading,
   Image,
@@ -35,7 +34,9 @@ const uniqueid=nanoid()
   
 // const params=useParams(id)
   const dispatch=useDispatch();
+
   const addToCartHandler=(payload)=>{
+    console.log(payload);
     dispatch(addProductCart(payload))
   }
   return (
