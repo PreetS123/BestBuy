@@ -7,11 +7,11 @@ import {
   Image,
   Stack,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
-import {nanoid} from 'nanoid';
-
+import { nanoid } from "nanoid";
 
 var tppicks = [
   {
@@ -42,18 +42,33 @@ var tppicks = [
 export const Home = () => {
   return (
     <>
-      <Flex h={"600px"} gap="20px">
+      <Flex
+        direction={{ base: "column", md: "row", lg: "row" }}
+        h={{ base: "fit-content", md: "600px", lg: "600px" }}
+        
+      >
         <Stack
           flex={2}
+          p={2}
           justifyContent="center"
           alignItems={"center"}
           backgroundImage={`url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-510776_2022TopDeals-GHPApp-LV-55adde1f-dd0b-48d7-9a08-b28bbc00187d.jpg")`}
         >
-          <Button h={10} w={20} bg={'white'} color={"blue"}>
+          <Button
+            h={10}
+            w={20}
+            bg={useColorModeValue("blue.600", "blue.900")}
+            color={useColorModeValue("white", "blue.100")}
+            p={4}
+            _hover={{
+              transform: 'translateY(2px)',
+              boxShadow: 'lg',
+            }} 
+          >
             Shop Now
           </Button>
         </Stack>
-        <Flex direction={"column"} flex={3} gap='5px'>
+        <Flex direction={"column"} flex={3} gap="5px">
           <Flex flex={2} p={2} border={"1px solid"} borderColor={"gray.300"}>
             {tppicks.map((val) => {
               return (
@@ -72,14 +87,18 @@ export const Home = () => {
           <Flex justify={"space-around"} flex={3}>
             <Box
               border={"1px solid"}
-              borderColor={'gray.300'}
+              borderColor={"gray.300"}
               h={"70%"}
               display="flex"
               flexDirection={"column"}
               justifyContent="space-around"
               p={2}
             >
-              <Button w={40} bg={"blue"} color="white">
+              <Button w={40} bg={"blue"} color="white"  
+              _hover={{
+              transform: 'translateY(2px)',
+              boxShadow: 'lg',
+              }} >
                 <span>Outlet</span> <span>Deals</span>
               </Button>
               <Image
@@ -90,7 +109,7 @@ export const Home = () => {
             </Box>
             <Box
               border={"1px solid"}
-              borderColor={'gray.300'}
+              borderColor={"gray.300"}
               h={"70%"}
               display="flex"
               flexDirection={"column"}
@@ -102,7 +121,7 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500470_sd.jpg;maxHeight=428;maxWidth=644"
               />
               <Link to="#">TCL - 43" Class 4-Series 4k UHD HD</Link>
-              <Link to="#">Go to Cart</Link>
+              <Link to="/cart">Go to Cart</Link>
             </Box>
           </Flex>
         </Flex>
@@ -110,15 +129,22 @@ export const Home = () => {
 
       <Stack bg={"white"} marginTop={"30px"} p={4}>
         <Heading
-        fontSize={25}
+          fontSize={25}
           borderBottom={"1px solid"}
           borderColor={"gray.200"}
           textDecoration={"underline"}
         >
           You viewed
         </Heading>
-        <Text color="blue" cursor={'pointer'}>Manage all your recently viewed items</Text>
-        <Flex height={300} gap="20px" p={4} justify={"space-around"}>
+        <Text color="blue" cursor={"pointer"}>
+          Manage all your recently viewed items
+        </Text>
+        <Flex 
+        height={{base:'fit-content',md:300,lg:300}} 
+        gap={{base:"10px",md:"15px",lg:"20px" }}
+        p={4} 
+        justify={"space-around"}
+        >
           <Flex
             direction={"column"}
             alignItems={"center"}
@@ -126,13 +152,15 @@ export const Home = () => {
             h={"full"}
             border={"1px solid"}
             borderColor="gray.200"
+            fontSize={{base:'10px',md:"15px",lg:'16px'}} 
           >
             <Image
-              h={"60%"}
+              // h={"60%"}
+              flex={3}
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6483/6483692_sd.jpg;maxHeight=400;maxWidth=400"
             />
-            <Text>Google - Pixel 6 Pro 128GB - Stormy Black </Text>
+            <Text flex={2}>Google - Pixel 6 Pro 128GB - Stormy Black </Text>
           </Flex>
           <Flex
             direction={"column"}
@@ -141,13 +169,14 @@ export const Home = () => {
             h={"full"}
             border={"1px solid"}
             borderColor="gray.200"
+            
           >
             <Image
-              h={"60%"}
+              flex={3}
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6458/6458645_sd.jpg;maxHeight=400;maxWidth=400"
             />
-            <Text>Toshiba - 55" Class C350 Series LED 4K</Text>
+            <Text flex={2} fontSize={{base:'10px',md:"15px",lg:'18px'}} >Toshiba - 55" Class C350 Series LED 4K</Text>
           </Flex>
           <Flex
             direction={"column"}
@@ -158,11 +187,11 @@ export const Home = () => {
             borderColor="gray.200"
           >
             <Image
-              h={"60%"}
+              flex={3}
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500470_sd.jpg;maxHeight=400;maxWidth=400"
             />
-            <Text>TCL - 43" Class 4-Series 4K UHD HDR Smart</Text>
+            <Text flex={2} fontSize={{base:'10px',md:"15px",lg:'16px'}}>TCL - 43" Class 4-Series 4K UHD HDR Smart</Text>
           </Flex>
           <Flex
             direction={"column"}
@@ -173,11 +202,11 @@ export const Home = () => {
             borderColor="gray.200"
           >
             <Image
-              h={"60%"}
+              flex={3}
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4900/4900942_sd.jpg;maxHeight=214;maxWidth=278"
             />
-            <Text>Apple - AirPods Pro </Text>
+            <Text flex={2} fontSize={{base:'10px',md:"15px",lg:'16px'}}>Apple - AirPods Pro </Text>
           </Flex>
           <Flex
             direction={"column"}
@@ -188,11 +217,11 @@ export const Home = () => {
             borderColor="gray.200"
           >
             <Image
-              h={"60%"}
+              flex={3}
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5721/5721600_sd.jpg;maxHeight=214;maxWidth=278"
             />
-            <Text>MacBook Air 13.3" Laptop</Text>
+            <Text flex={2} fontSize={{base:'10px',md:"15px",lg:'16px'}}>MacBook Air 13.3" Laptop</Text>
           </Flex>
           <Flex
             direction={"column"}
@@ -203,18 +232,18 @@ export const Home = () => {
             borderColor="gray.200"
           >
             <Image
-              h={"60%"}
+             flex={3}
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-93899-iphone13-pro-pol_der-f73f557f-62fd-4937-9f7d-1aba33288b71.jpg;maxHeight=504;maxWidth=740"
             />
-            <Text>iPhone 13 Pro </Text>
+            <Text flex={2} fontSize={{base:'10px',md:"15px",lg:'16px'}}>iPhone 13 Pro </Text>
           </Flex>
         </Flex>
       </Stack>
 
       <div
         style={{
-          width:'90%',
+          width: "90%",
           height: "105px",
           display: "grid",
           gridTemplateColumns: "repeat(2,1fr)",
@@ -289,25 +318,22 @@ export const Home = () => {
         </div>
       </div>
 
-
-<Stack w={'100%'} h={'60px'} backgroundColor={'yellow'} >
-      <div
-        style={{
-          width: "50%",
-          margin:'auto',
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          
-        }}
-      >
-        <Heading>Insignia air fryers product recall .</Heading>
-        <Link to="#" color="blue">
-          Learn more.
-        </Link>
-      </div>
+      <Stack w={"100%"} h={"60px"} backgroundColor={"yellow"}>
+        <div
+          style={{
+            width: "50%",
+            margin: "auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <Heading fontSize={{base:"10px",md:'20px',lg:'20px'}}>Insignia air fryers product recall .</Heading>
+          <Link to="#" color="blue" fontSize={{base:"10px",md:'20px',lg:'20px'}}>
+            Learn more.
+          </Link>
+        </div>
       </Stack>
-
 
       <Flex p={2} h={500} bg={"gray.100"} justify={"space-around"}>
         <Stack
@@ -319,7 +345,10 @@ export const Home = () => {
           <Heading>Save up to $500</Heading>
           <Text>on select Windows laptops.</Text>
           <Text>Minimum savings is $30</Text>
-          <Button w={40} bg={"blue"} color="white">
+          <Button w={40} bg={"blue"} color="white"  _hover={{
+              transform: 'translateY(2px)',
+              boxShadow: 'lg',
+            }} >
             Shop Now
           </Button>
         </Stack>
@@ -331,33 +360,34 @@ export const Home = () => {
         >
           <Heading>Smart TVs</Heading>
           <Text>as low as $109.99</Text>
-          <Button w={40} bg={"blue"} color={"white"}>
+          <Button w={40} bg={"blue"} color={"white"}  _hover={{
+              transform: 'translateY(2px)',
+              boxShadow: 'lg',
+            }} >
             Shop Now
           </Button>
         </Stack>
       </Flex>
 
-
-
       <Stack border={"1px solid"} borderColor={"gray.200"}>
         <Flex direction={"row"} justify={"space-around"}>
-          <Flex>
-            <Image src="https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/gl-37875-app-curbside-vpe_der-149659.png;maxHeight=144;maxWidth=144" />
-            <Box>
-              <Heading>Ready in one hour</Heading>
+          <Flex gap={'20px'}  >
+            <Image flex={2} src="https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/gl-37875-app-curbside-vpe_der-149659.png;maxHeight=144;maxWidth=144" />
+            <Box flex={3}  fontSize={{base:"10px",md:'15px',lg:'20px'}}>
+              <Heading >Ready in one hour</Heading>
               <Text>with Store or Curbside Pickup.</Text>
             </Box>
           </Flex>
           <Flex>
             <Image src="https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/gl-app-vpe-freeshippin_der1-206852.png;maxHeight=144;maxWidth=144" />
-            <Box>
+            <Box  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
               <Heading>Free Next-Day Delivery</Heading>
               <Text>on thousands of items.</Text>
             </Box>
           </Flex>
           <Flex>
             <Image src="https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/gl-app-vpe-freeshippin_der1-206852.png;maxHeight=144;maxWidth=144" />
-            <Box>
+            <Box  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
               <Heading>Ready in one hour</Heading>
               <Text>Order by 3 p.m., get it by 8 p.m.</Text>
               <Text>Order by 2 p.m. Sunday.</Text>
@@ -366,12 +396,9 @@ export const Home = () => {
         </Flex>
       </Stack>
 
-
-
-
       <Flex
         h={"170px"}
-        w={'100%'}
+        w={"100%"}
         backgroundImage={`url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/gl62892-tt-skinny-bg-lg-4ed9a87a-ca73-4e7a-8610-0f2159f2239b.jpg")`}
       >
         <Flex padding={10} direction={"column"}>
@@ -388,16 +415,13 @@ export const Home = () => {
         <Box border={"1px solid"} borderColor="white"></Box>
         <Flex padding={10} direction={"column"} color="white" w="50%">
           <Heading>The membership you and your tech deserve.</Heading>
-          <Text>
+          <Text  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
             Best Buy Totaltech™ provides 24/7/365 tech support, up to 24 months
             of product protection with active membership, free standard
             installation and so much more. Terms and conditions apply.
           </Text>
         </Flex>
       </Flex>
-
-
-
 
       <Stack h={600} p={6}>
         {/* 1st parent div */}
@@ -562,8 +586,8 @@ export const Home = () => {
               backgroundColor: "#EFF1F1 ",
               display: "grid",
               gridTemplateColumns: "repeat(2,1fr)",
-              gap:'10px',
-              padding:'2%'
+              gap: "10px",
+              padding: "2%",
             }}
           >
             {/* 3rd */}
@@ -634,7 +658,7 @@ export const Home = () => {
         <Heading>Our featured offers</Heading>
         <Divider />
         <Flex direction={"column"}>
-          <Flex h={600} border={"1px solid"} borderColor={"gray.200"}>
+          <Flex h={600} border={"1px solid"} borderColor={"gray.200"}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
             <Flex
               p={2}
               borderRight={"1px solid"}
@@ -649,10 +673,12 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-93899-iphone13-pro-pol_der-f73f557f-62fd-4937-9f7d-1aba33288b71.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading color={'blue'}>
+                <Heading color={"blue"}  fontSize={{base:"10px",md:'20px',lg:'20px'}} >
                   iPhone 13 Pro <br /> Save up to $800
                 </Heading>
-                <Text color={'gray.500'}>with qualified activation and trade-in of iPhone</Text>
+                <Text color={"gray.500"}>
+                  with qualified activation and trade-in of iPhone
+                </Text>
               </Box>
             </Flex>
             <Flex
@@ -669,8 +695,8 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol-MMT-552481_der-992f5ee6-c7cc-4a54-879e-5fb01fae0462.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading color={'blue'}>Gifts for gaming dads.</Heading>
-                <Text color={'gray.500'}>
+                <Heading color={"blue"}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>Gifts for gaming dads.</Heading>
+                <Text color={"gray.500"}>
                   Find an assortment og games, from new hits to classic titles,
                   plus an array of accessories
                 </Text>
@@ -690,12 +716,16 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol_microsoft-happy-guy-v2-0620-3a7b8bc1-22dd-4fc9-8cf6-905382572981.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading color={'blue'}>Introducing Surface Laptop Co 2.</Heading>
-                <Text color={'gray.500'}>Sleek, light, on the go performance.</Text>
+                <Heading color={"blue"}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
+                  Introducing Surface Laptop Co 2.
+                </Heading>
+                <Text color={"gray.500"}>
+                  Sleek, light, on the go performance.
+                </Text>
               </Box>
             </Flex>
           </Flex>
-          <Flex h={600} border={"1px solid"} p={2} borderColor={"gray.300"}>
+          <Flex h={600} border={"1px solid"} p={2} borderColor={"gray.300"}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
             <Flex
               p={2}
               borderRight={"1px solid"}
@@ -710,11 +740,13 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/mmt-557424-apple-tv-pol_der-81ccc21e-4d16-428e-aaa0-93003a919044.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading color={'blue'}>
+                <Heading color={"blue"}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
                   Apple TV 4K (2nd gen) <br />
                   Save $50 on the 32GB or 64GB model.
                 </Heading>
-                <Text color={'gray.500'}>with qualified activation and trade-in of iPhone</Text>
+                <Text color={"gray.500"}>
+                  with qualified activation and trade-in of iPhone
+                </Text>
               </Box>
             </Flex>
             <Flex
@@ -731,8 +763,10 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-549477_pol_COPE_DER-bb7580c0-afa1-4b6b-9775-d78aa1be89e3.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading color={'blue'}>Save up to $100 on select wearables.</Heading>
-                <Text color={'gray.500'}>
+                <Heading color={"blue"}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
+                  Save up to $100 on select wearables.
+                </Heading>
+                <Text color={"gray.500"}>
                   Find an assortment og games, from new hits to classic titles,
                   plus an array of accessories
                 </Text>
@@ -752,8 +786,10 @@ export const Home = () => {
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-552448-speakers-pol-der-f2233e68-2161-4487-b9c7-4e1c2cf72a25.jpg;maxHeight=504;maxWidth=740"
               />
               <Box>
-                <Heading color={'blue'}>Save up to 25% on select on speakers.</Heading>
-                <Text color={'gray.500'}>
+                <Heading color={"blue"}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
+                  Save up to 25% on select on speakers.
+                </Heading>
+                <Text color={"gray.500"}>
                   Take your audio to the next level with theater speakers.
                 </Text>
               </Box>
@@ -762,8 +798,8 @@ export const Home = () => {
         </Flex>
       </Stack>
 
-      <Stack p={4}>
-        <Heading fontSize={25}>Related to items you've viewed</Heading>
+      <Stack p={4}  fontSize={{base:"10px",md:'16px',lg:'18px'}}>
+        <Heading  fontSize={{base:"20px",md:'25px',lg:'25px'}}>Related to items you've viewed</Heading>
         <Divider />
         <Flex h={300} p={2}>
           <Flex p={2} direction={"column"}>
@@ -843,8 +879,8 @@ export const Home = () => {
         </Flex>
       </Stack>
 
-      <Stack p={4}>
-        <Heading fontSize={25}>Trending deals</Heading>
+      <Stack p={4}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
+        <Heading  fontSize={{base:"20px",md:'25px',lg:'25px'}}>Trending deals</Heading>
         <Divider />
         <Flex h={300} p={2}>
           <Flex p={2} direction={"column"}>
@@ -934,13 +970,14 @@ export const Home = () => {
           border={"1px solid"}
           borderColor={"gray.300"}
           p={10}
+          fontSize={{base:"10px",md:'16px',lg:'16px'}}
         >
           <Image
             h={"50%"}
             w={"full"}
             src="https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/GL-37400-pol-dotd-190823_der-98962.png;maxHeight=280;maxWidth=412"
           />
-          <Heading fontSize={16}>Deal of the Day.</Heading>
+          <Heading  fontSize={{base:"10px",md:'16px',lg:'18px'}}>Deal of the Day.</Heading>
           <Text>Great deals. Every day.</Text>
         </Flex>
         <Flex
@@ -966,23 +1003,36 @@ export const Home = () => {
           </Text>
         </Flex>
       </Flex>
-             
-             <Stack p={3} h={150}
-             backgroundColor={'blue'}>
-            <Flex w={'70%'} margin='auto' alignItems={'center'} justify={'space-around'} p={4}>
-                <Image w={150} h={'full'} src='https://pisces.bbystatic.com/image2/BestBuy_US/dam/GL-66611-cb-fs-211018-6dd3346e-0ef8-458c-b16d-5ff2264fbb11.png'/>
-            <Box>
-                <Heading color='white'>Apply today and get</Heading>
-                <Heading color={'yellow'}>10% back</Heading>
-            </Box>
-            <Text color={'white'}>in rewards on your first day of purchase when you are approved for the Card.</Text>
-            <Button w={100} bg={'yellow'}>Learn More</Button>
-            </Flex>
-            </Stack>
 
+      <Stack p={3} h={150} backgroundColor={"blue"}>
+        <Flex
+          w={"70%"}
+          margin="auto"
+          alignItems={"center"}
+          justify={"space-around"}
+          p={4}
+          fontSize={{base:"10px",md:'18px',lg:'20px'}}
+        >
+          <Image
+            w={150}
+            h={{base:'60px',lg:"full"}}
+            src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/GL-66611-cb-fs-211018-6dd3346e-0ef8-458c-b16d-5ff2264fbb11.png"
+          />
+          <Box>
+            <Heading  fontSize={{base:"10px",md:'20px',lg:'20px'}} color="white">Apply today and get</Heading>
+            <Heading  fontSize={{base:"10px",md:'20px',lg:'20px'}} color={"yellow"}>10% back</Heading>
+          </Box>
+          <Text color={"white"}>
+            in rewards on your first day of purchase when you are approved for
+            the Card.
+          </Text>
+          <Button w={{base:'fit-content',lg:100}} p={4} bg={"yellow"} >
+            Learn More
+          </Button>
+        </Flex>
+      </Stack>
 
-
-      <Stack marginBottom='100px' marginTop={'30px'} p={4}>
+      <Stack marginBottom="100px" marginTop={"30px"} p={4}  fontSize={{base:"10px",md:'20px',lg:'20px'}}>
         <Heading fontSize={22}>Featured Products</Heading>
         <Divider />
         <Flex h={300} p={2}>
@@ -992,7 +1042,10 @@ export const Home = () => {
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398119_sd.jpg;maxHeight=150;maxWidth=225"
             />
-            <Text color={'blue.500'}>Samsung - Galaxy 13.3" 4K Ultra HD Touch- Screen Chromebook - Intel Core i7 </Text>
+            <Text color={"blue.500"}>
+              Samsung - Galaxy 13.3" 4K Ultra HD Touch- Screen Chromebook -
+              Intel Core i7{" "}
+            </Text>
             <Text>$539.99</Text>
           </Flex>
           <Flex p={2} direction={"column"}>
@@ -1001,7 +1054,10 @@ export const Home = () => {
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6484/6484736_sd.jpg;maxHeight=150;maxWidth=225"
             />
-            <Text>Citizen - CZ Smart 44mm Black IP Stainlss Steel Case Hvbrid Heart Rate</Text>
+            <Text>
+              Citizen - CZ Smart 44mm Black IP Stainlss Steel Case Hvbrid Heart
+              Rate
+            </Text>
             <Text>$279.99</Text>
           </Flex>
           <Flex p={2} direction={"column"}>
@@ -1011,7 +1067,8 @@ export const Home = () => {
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6502/6502273_sd.jpg;maxHeight=150;maxWidth=225"
             />
             <Text>
-              ario - Essential Sportlight 4 Camerass and Yard Sign, Indoor/Outdoor 
+              ario - Essential Sportlight 4 Camerass and Yard Sign,
+              Indoor/Outdoor
             </Text>
             <Text>$349.99</Text>
           </Flex>
@@ -1021,7 +1078,10 @@ export const Home = () => {
               w={"70%"}
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6502/6502943_sd.jpg;maxHeight=150;maxWidth=225"
             />
-            <Text>HP - Victua 15.6" Gaming Laptop - Intel Core i7-1265DH- 16GB Memory</Text>
+            <Text>
+              HP - Victua 15.6" Gaming Laptop - Intel Core i7-1265DH- 16GB
+              Memory
+            </Text>
             <Text>$1399.99</Text>
           </Flex>
           <Flex p={2} direction={"column"}>
@@ -1042,7 +1102,8 @@ export const Home = () => {
               src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6416/6416337_sd.jpg;maxHeight=150;maxWidth=225"
             />
             <Text>
-              Ario - Essential Spotlight Camera - indoor/Outdoor Wire-Free 1080 Security Camera
+              Ario - Essential Spotlight Camera - indoor/Outdoor Wire-Free 1080
+              Security Camera
             </Text>
             <Text>$99.99</Text>
           </Flex>

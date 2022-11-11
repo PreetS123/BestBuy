@@ -11,7 +11,7 @@ import { useState } from "react";
 
 export const CartPage = () => {
   const [cartData, setCartData] = useState([]);
-  // const [value, setValue] =useState(0);
+  const [value, setValue] =useState(0);
   const cart = useSelector((store) => store.ecommerceData.cart);
   const dispatch = useDispatch();
 
@@ -34,13 +34,14 @@ export const CartPage = () => {
   };
   // console.log(cart);
 
-  // const call = (cartData) => {
-  //   var subTotal = cartData.reduce(function (acc, elem) {
-  //     return acc + elem.price ;
-  //   }, 0);
-  //   setValue(subTotal);
-  // };
-  //   console.log(value)
+  const call = (cart) => {
+    var subTotal = cart.reduce(function (acc, elem) {
+      return acc + elem.price ;
+    }, 0);
+    setValue(subTotal);
+  };
+  
+    console.log('totalval',value)
   return (
     <>
       <Flex flexDirection={"row"} gap="20px" p={6} bg={"gray.50"}>
