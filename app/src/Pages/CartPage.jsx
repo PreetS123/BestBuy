@@ -11,7 +11,7 @@ import { useState } from "react";
 
 export const CartPage = () => {
   const [cartData, setCartData] = useState([]);
-  const [value, setValue] =useState(0);
+  const [value, setValue] =useState(1);
   const cart = useSelector((store) => store.ecommerceData.cart);
   const dispatch = useDispatch();
 
