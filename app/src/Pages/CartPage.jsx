@@ -1,4 +1,4 @@
-import { Button, Center, Flex,Heading,Stack, Text} from "@chakra-ui/react";
+import { Button, Center, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,30 +10,30 @@ import axios from "axios";
 import { useState } from "react";
 
 export const CartPage = () => {
-  const [cartData,setCartData]=useState([]);
+  const [cartData, setCartData] = useState([]);
   // const [value, setValue] =useState(0);
   const cart = useSelector((store) => store.ecommerceData.cart);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     if (cart?.length === 0) {
-     
       dispatch(getProductCart());
     }
-    setCartData(cart)
-  }, [dispatch, cart?.length]);
-  
+    setCartData(cart);
+  }, [dispatch]);
 
-    const deleteCart=(id)=>{
-        axios.delete(`http://localhost:8080/cart/${id}`).then(res=>{
-          const deleted=cart.filter((el) => el.id!==id)
-          setCartData(deleted)
-        })
-   
-        // console.log("deleteproduct:",id)
-    }
-    // console.log(cart);
-    
+  const deleteCart = (id) => {
+    axios
+      .delete(`https://database-bestbuy.herokuapp.com/cart/${id}`)
+      .then((res) => {
+        const deleted = cart.filter((el) => el.id !== id);
+        setCartData(deleted);
+      });
+
+    // console.log("deleteproduct:",id)
+  };
+  // console.log(cart);
+
   // const call = (cartData) => {
   //   var subTotal = cartData.reduce(function (acc, elem) {
   //     return acc + elem.price ;
@@ -43,11 +43,21 @@ export const CartPage = () => {
   //   console.log(value)
   return (
     <>
-      <Flex  flexDirection={"row"} gap='20px' p={6} bg={'gray.50'}>
-        <Stack flex={4} >{
-              cartData.map(item=>(<CartCard key={nanoid()} {...item} deleteCart={deleteCart}/>))
-        }</Stack>
-        <Stack bg={'white'} flex={1} justify={'space-around'} p={4} spacing={3} border={'1px solid'} borderColor={'gray.300'}>
+      <Flex flexDirection={"row"} gap="20px" p={6} bg={"gray.50"}>
+        <Stack flex={4}>
+          {cart.map((item) => (
+            <CartCard key={nanoid()} {...item} deleteCart={deleteCart} />
+          ))}
+        </Stack>
+        <Stack
+          bg={"white"}
+          flex={1}
+          justify={"space-around"}
+          p={4}
+          spacing={3}
+          border={"1px solid"}
+          borderColor={"gray.300"}
+        >
           <Center>
             <Heading>Order Summary </Heading>
           </Center>
@@ -74,8 +84,10 @@ export const CartPage = () => {
               <Heading fontSize={16}>Total</Heading>
               <Heading fontSize={16}>$1162.98</Heading>
             </Flex>
-            <Button  bg={"yellow"}>
-              <Center><Link to='/checkout'>Checkout</Link></Center>
+            <Button bg={"yellow"}>
+              <Center>
+                <Link to="/checkout">Checkout</Link>
+              </Center>
             </Button>
             <Text>Sign in to get My Best Buy™ Points</Text>
           </Stack>
