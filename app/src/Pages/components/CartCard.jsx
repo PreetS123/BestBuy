@@ -3,7 +3,7 @@ import React from "react";
 
 
 
-export const CartCard = ({ id,image,desc,pickup,shipping,price,saving,print,deleteCart }) => {
+export const CartCard = ({ id,image,desc,pickup,shipping,price,saving,print,deleteCart,setValue }) => {
   
   return (
     <Center border={'1px solid'} borderColor={'gray.300'} bg={'white'}>
@@ -19,7 +19,7 @@ export const CartCard = ({ id,image,desc,pickup,shipping,price,saving,print,dele
             <Text><span fontWeight={'500'}>Shipping:</span>{shipping}</Text>
         </Flex>
         <Stack flex={1}>
-          <Select>
+          <Select onChange={(e)=>setValue(e.target.value)} >
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>

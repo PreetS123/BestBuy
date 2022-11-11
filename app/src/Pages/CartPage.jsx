@@ -34,20 +34,28 @@ export const CartPage = () => {
   };
   // console.log(cart);
 
-  const call = (cart) => {
-    var subTotal = cart.reduce(function (acc, elem) {
-      return acc + elem.price ;
-    }, 0);
-    setValue(subTotal);
-  };
-  
-    console.log('totalval',value)
+    
+    let cartTotal= cart.reduce((acc,item)=>{
+      return acc+ item.price;
+    },0)
+    console.log('totalval',cartTotal);
+
+     let tax= Math.round(cartTotal*0.18);
+
+     let printTotal= cart.reduce((acc,item)=>{
+       return acc+item.print;
+     },0)
+     console.log('printval',printTotal);
+   
+     let saving=printTotal-cartTotal;
+      
+     console.log(value);
   return (
     <>
       <Flex flexDirection={"row"} gap="20px" p={6} bg={"gray.50"}>
         <Stack flex={4}>
           {cart.map((item) => (
-            <CartCard key={nanoid()} {...item} deleteCart={deleteCart} />
+            <CartCard key={nanoid()} {...item} deleteCart={deleteCart} setValue={setValue} />
           ))}
         </Stack>
         <Stack
@@ -58,18 +66,20 @@ export const CartPage = () => {
           spacing={3}
           border={"1px solid"}
           borderColor={"gray.300"}
+          height={'fit-content'}
+          gap={{base:'10px',md:'20px',lg:'20px'}}
         >
           <Center>
-            <Heading>Order Summary </Heading>
+            <Heading fontSize={{base:'20px',md:'25px',lg:'28px'}}>Order Summary </Heading>
           </Center>
-          <Stack>
+          <Stack textAlign={'center'}>
             <Flex justify={"space-around"}>
               <Text>Original Price</Text>
-              <Text>$1212.98</Text>
+              <Text>${printTotal}</Text>
             </Flex>
             <Flex justify={"space-around"}>
               <Text>Savings</Text>
-              <Text>-$150</Text>
+              <Text>-${saving}</Text>
             </Flex>
             <Flex justify={"space-around"}>
               <Text>Shipping</Text>
@@ -77,13 +87,13 @@ export const CartPage = () => {
             </Flex>
             <Flex justify={"space-around"}>
               <Text>Estimated Sales Tax</Text>
-              <Text>$1162.98</Text>
+              <Text>${tax}</Text>
             </Flex>
           </Stack>
           <Stack>
             <Flex justify={"space-around"}>
               <Heading fontSize={16}>Total</Heading>
-              <Heading fontSize={16}>$1162.98</Heading>
+              <Heading fontSize={16}>${(cartTotal+tax).toFixed(2)}</Heading>
             </Flex>
             <Button bg={"yellow"}>
               <Center>
