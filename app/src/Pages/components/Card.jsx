@@ -10,26 +10,12 @@ import {
 } from "@chakra-ui/react";
 import { nanoid } from "nanoid";
 import { FaRegObjectGroup, FaTruck } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { addProductCart } from "../../Redux/products/action";
 
 
-export const Card = ({
-  product
-  //     id,
-  // image,
-  // desc,
-  // model,
-  // rate,
-  // count,
-  // pickup,
-  // shipping,
-  // price,
-  // saving,
-  // print,
-  // offer,
-}) => {
+export const Card = ({product}) => {
 const uniqueid=nanoid()
   
 // const params=useParams(id)
@@ -44,7 +30,7 @@ const uniqueid=nanoid()
       <Stack
         w={{ sm: "100%", md: "100%" }}
         height={{ sm: "476px", md: "30rem" }}
-        direction={{ base: "column", md: "row" }}
+        direction={{ base: "column", md: "row" ,sm:'row' }}
         bg={useColorModeValue("white", "gray.900")}
         borderTop="1px"
         borderColor="rgb(196,196,196)"
