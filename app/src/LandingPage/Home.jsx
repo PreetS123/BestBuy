@@ -42,6 +42,8 @@ var tppicks = [
 export const Home = () => {
   return (
     <>
+
+    {/* first box  */}
       <Flex
         direction={{ base: "column", md: "row", lg: "row" }}
         h={{ base: "fit-content", md: "600px", lg: "600px" }}
@@ -93,6 +95,7 @@ export const Home = () => {
               flexDirection={"column"}
               justifyContent="space-around"
               p={2}
+              gap='8px'
             >
               <Button w={40} bg={"blue"} color="white"  
               _hover={{
@@ -102,7 +105,7 @@ export const Home = () => {
                 <span>Outlet</span> <span>Deals</span>
               </Button>
               <Image
-                h={"60%"}
+                h={"50%"}
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/ClearanceOpenBox_White-217158.png;maxHeight=230;maxWidth=330"
               />
               <Link to="#">View outlet deals</Link>
@@ -117,15 +120,17 @@ export const Home = () => {
             >
               <Heading fontSize={16}>Continue</Heading>
               <Image
-                h={"50%"}
+                h={{base:"30%",md:'40%',lg:'40%'}}
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500470_sd.jpg;maxHeight=428;maxWidth=644"
               />
               <Link to="#">TCL - 43" Class 4-Series 4k UHD HD</Link>
-              <Link to="/cart">Go to Cart</Link>
+              <Link to="/cart" >Go to Cart</Link>
             </Box>
           </Flex>
         </Flex>
       </Flex>
+
+      
 
       <Stack bg={"white"} marginTop={"30px"} p={4}>
         <Heading
@@ -1124,13 +1129,13 @@ export const Home = () => {
 
 const Crd = (props) => {
   return (
-    <>
-      <div>
-        <img src={props.image} alt="Special Deals" />
-      </div>
-      <div>
-        <span>{props.url}</span>
-      </div>
-    </>
+    <Flex direction={'column'} align='center' justify={'center'} gap={{base:'5px'}}  >
+      <Box h={{base:'50px',sm:'100px',md:'120px',lg:'150px'}} w={{base:'50px',sm:'80px',md:'100px',lg:'120px'}}>
+        <Image h={'100%'} w={'100%'} src={props.image} alt="Special Deals" />
+      </Box>
+      <Box>
+        <Text fontSize={{base:'8px',sm:'10px',md:'12px',lg:'14px'}}>{props.url}</Text>
+      </Box>
+    </Flex>
   );
 };
