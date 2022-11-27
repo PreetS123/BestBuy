@@ -12,6 +12,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 import { nanoid } from "nanoid";
+import './Home.css';
 
 var tppicks = [
   {
@@ -39,6 +40,8 @@ var tppicks = [
     url: "Steel|Series-Apex Pro TKL Wired Mechanical...",
   },
 ];
+
+
 export const Home = () => {
   return (
     <>
@@ -433,36 +436,17 @@ export const Home = () => {
 
      {/* 8th div  */}
 
-      <Stack h={600} p={6}>
+      <Stack h={{base:'fit-content', lg:600}} p={6}>
         {/* 1st parent div */}
         <div
-          style={{
-            display: "grid",
-            gap: "30px",
-            gridTemplateColumns: "repeat(3,1fr)",
-            height: "500px",
-            width: "100%",
-            color: "blue",
-          }}
+        className="first_parent"
         >
           <div
-            style={{
-              height: "100%",
-              width: "100%",
-              gap: "10px",
-              backgroundColor: "#EFF1F1 ",
-              display: "grid",
-              gridTemplateColumns: "repeat(2,1fr)",
-              padding: "2%",
-            }}
+           className="parent_inside"
           >
             {/* 1st */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-                backgroundColor: "none",
-              }}
+            className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -473,11 +457,7 @@ export const Home = () => {
             </div>
             {/* 2nd */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-                backgroundColor: "none",
-              }}
+              className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -488,11 +468,7 @@ export const Home = () => {
             </div>
             {/* 3rd */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-                backgroundColor: "none",
-              }}
+              className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -503,11 +479,7 @@ export const Home = () => {
             </div>
             {/* 4rth */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-                backgroundColor: "none",
-              }}
+             className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -520,22 +492,11 @@ export const Home = () => {
 
           {/* 2nd parent div */}
           <div
-            style={{
-              height: "100%",
-              width: "100%",
-              backgroundColor: "#EFF1F1 ",
-              display: "grid",
-              gridTemplateColumns: "repeat(2,1fr)",
-              padding: "2%",
-              gap: "10px",
-            }}
+           className="parent_inside"
           >
             {/* 1st */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-              }}
+             className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -546,10 +507,7 @@ export const Home = () => {
             </div>
             {/* 2nd */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-              }}
+            className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -560,10 +518,7 @@ export const Home = () => {
             </div>
             {/* 3rd */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-              }}
+             className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -574,10 +529,7 @@ export const Home = () => {
             </div>
             {/* 4rth */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-              }}
+              className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -590,23 +542,12 @@ export const Home = () => {
 
           {/* 3rf parent div */}
           <div
-            style={{
-              height: "100%",
-              width: "100%",
-              backgroundColor: "#EFF1F1 ",
-              display: "grid",
-              gridTemplateColumns: "repeat(2,1fr)",
-              gap: "10px",
-              padding: "2%",
-            }}
+            className="parent_inside"
           >
             {/* 3rd */}
             {/* 1st */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-              }}
+             className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -617,11 +558,7 @@ export const Home = () => {
             </div>
             {/* 2nd */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-                backgroundColor: "none",
-              }}
+            className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -632,11 +569,7 @@ export const Home = () => {
             </div>
             {/* 3rd */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-                backgroundColor: "none",
-              }}
+              className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
@@ -647,11 +580,7 @@ export const Home = () => {
             </div>
             {/* 4rth */}
             <div
-              style={{
-                height: "250px",
-                width: "100%",
-                backgroundColor: "none",
-              }}
+              className="first"
             >
               <img
                 style={{ height: "80%", width: "100%" }}
