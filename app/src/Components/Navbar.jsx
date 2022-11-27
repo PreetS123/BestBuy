@@ -15,13 +15,13 @@ import {
   Spacer,
   Divider,
 } from "@chakra-ui/react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { FaAngleDown, FaArrowRight, FaBars, FaSearch } from "react-icons/fa";
 // import {GrCart} from 'react-icons/gr';
 
 export const Navbar = () => {
   return (
-    <Box marginBottom={'30px'}>
+    <Box marginBottom={"30px"} fontSize={{ base: 8, sm: 12, md: 14, lg: 18 }}>
       <Flex
         bg={useColorModeValue("#0944B4 ", "#0944B4 ")}
         color={useColorModeValue("white.600", "white")}
@@ -49,12 +49,18 @@ export const Navbar = () => {
               <MenuButton px={4} py={2} bg={"#0944B4"} color="white">
                 <Flex fontSize={"4xl"} alignItems="center" gap="10px">
                   <Box>
-                    <FaBars />
+                    <FaBars width="14px" />
                   </Box>
-                  <Box> Menu</Box>
+                  <Text fontSize={{ base: 10, sm: 14, md: 16, lg: 18 }}>
+                    {" "}
+                    Menu
+                  </Text>
                 </Flex>
               </MenuButton>
-              <MenuList fontSize={"25px"} color={"gray.500"}>
+              <MenuList
+                fontSize={{ base: 10, sm: 12, md: 14, lg: 18 }}
+                color={"gray.500"}
+              >
                 <MenuItem>
                   <Flex alignItems="center">
                     Deals <FaArrowRight />{" "}
@@ -81,34 +87,38 @@ export const Navbar = () => {
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
-                    <Link to='#'>Appliances </Link><FaArrowRight />
+                    <Link to="#">Appliances </Link>
+                    <FaArrowRight />
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
                     {" "}
-                    <Link to='/phone'>Cell Phones</Link> <FaArrowRight />{" "}
+                    <Link to="/phone">Cell Phones</Link> <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
-                  <Link to='/tv'> TV & Home Theater</Link> <FaArrowRight />{" "}
+                    <Link to="/tv"> TV & Home Theater</Link> <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
-                  <Link to='/computer'>  Computers & Tablets</Link> <FaArrowRight />{" "}
+                    <Link to="/computer"> Computers & Tablets</Link>{" "}
+                    <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
-                  <Link to='/computer'> Computers & Tablets</Link> <FaArrowRight />{" "}
+                    <Link to="/computer"> Computers & Tablets</Link>{" "}
+                    <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
                 <MenuItem>
                   <Flex alignItems="center">
                     {" "}
-                    <Link to='/camera'>   Cameras, Camcarders & Drones </Link><FaArrowRight />{" "}
+                    <Link to="/camera"> Cameras, Camcarders & Drones </Link>
+                    <FaArrowRight />{" "}
                   </Flex>{" "}
                 </MenuItem>
               </MenuList>
@@ -117,7 +127,7 @@ export const Navbar = () => {
         </Spacer>
         <Spacer>
           <Stack>
-            <Flex>
+            <Flex gap="10px">
               <Input />
               <Button>
                 <FaSearch color="grey" />
@@ -131,10 +141,14 @@ export const Navbar = () => {
             marginRight="40px"
             color="white"
             fontSize={"4xl"}
+            align="center"
           >
-            <Flex alignItems={'center'}>
-              {/* <Text ><GrCart color={'white'}/></Text> */}
-              <Link to='/cart'>Cart</Link></Flex>
+            <Flex
+              align={"center"}
+              fontSize={{ base: 12, sm: 14, md: 16, lg: 18 }}
+            >
+              <Link to="/cart">Cart</Link>
+            </Flex>
           </Stack>
         </Spacer>
       </Flex>
