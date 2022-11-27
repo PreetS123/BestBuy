@@ -342,11 +342,9 @@ export const Home = () => {
       
       <Flex p={2} gap='15px' w='100%' h={{base:300,md:400,lg:500}} bg={"gray.100"} justify={"space-around"}>
         <Stack
-          align='center'
-          justify='center'
           p={{base:4,md:4,lg:10}}
           h={"full"}
-          
+          w={'47%'}
           backgroundImage={`url('https://pisces.bbystatic.com/image2/BestBuy_US/dam/subghp-MMT-555591-windows-fcc6f1ef-675e-463d-bee8-64bd19088fbb.jpg')`}
         >
           <Heading fontSize={{base:15,md:18,lg:22}}> Save up to $500</Heading>
