@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 
 import {
-    FaArrowRight,
+  FaArrowRight,
   FaFacebookF,
   FaInstagram,
   FaPinterestP,
@@ -60,8 +60,13 @@ export const Footer = () => {
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
-
-      <Container as={Stack} p='4%' maxW={"10xl"} py={10} borderTop={'1px solid'}>
+      <Container
+        as={Stack}
+        p="4%"
+        maxW={"10xl"}
+        py={10}
+        borderTop={"1px solid"}
+      >
         <SimpleGrid
           templateColumns={{ sm: "1fr 1fr", md: "4fr 2fr" }}
           spacing={8}
@@ -71,6 +76,7 @@ export const Footer = () => {
               marginBottom={"30px"}
               templateColumns={{ sm: "1fr 1fr", md: "1fr 1fr 1fr" }}
               spacing={8}
+              fontSize={{ base: 10, md: 14, lg: 16 }}
             >
               <Stack align={"flex-start"}>
                 <ListHeader>Order & Purchases</ListHeader>
@@ -105,6 +111,7 @@ export const Footer = () => {
               marginBottom={"30px"}
               templateColumns={{ sm: "1fr 1fr", md: "1fr 1fr 1fr" }}
               spacing={8}
+              fontSize={{ base: 10, md: 14, lg: 16 }}
             >
               <Stack align={"flex-start"}>
                 <ListHeader>Payment Options</ListHeader>
@@ -131,6 +138,7 @@ export const Footer = () => {
             </SimpleGrid>
           </Box>
           <Stack
+            h='fit-content'
             align={"flex-start"}
             p="2%"
             bg={useColorModeValue("white.500", "white.300")}
@@ -142,9 +150,10 @@ export const Footer = () => {
               justifyContent="space-around"
               bg={useColorModeValue("white", "white")}
               border="1px solid rgb(196,196,196)"
+              gap='10px'
             >
-              <Stack  direction={"column"}>
-                <ListHeader>Get the latest deals and more.</ListHeader>
+              <Stack direction={"column"}>
+                <ListHeader fontSize={{base:10,md:14,lg:16}}>Get the latest deals and more.</ListHeader>
                 <Box>
                   <Input
                     placeholder={"Your email address"}
@@ -169,29 +178,47 @@ export const Footer = () => {
               </Stack>
               <Stack spacing={6}>
                 <Flex>
-                  <Box fontSize={"55px"} marginRight="20px" color={"blue"}>
+                  <Box fontSize={{base:20,md:34,lg:46}} marginRight="20px" color={"blue"}>
                     {/* <Logo  /> */}
-                    <FaPrint />
+                    <FaPrint width={'16px'} />
                   </Box>
-                  <Text fontSize={"xl"} fontWeight="500">
+                  <Text fontSize={{base:10,md:14,lg:16}} fontWeight="500">
                     Best Buy app <br />
-                   <Link to='#'> Learn more <FaArrowRight/></Link>
+                    <Link to="#">
+                      {" "}
+                      Learn more <FaArrowRight />
+                    </Link>
                   </Text>
                 </Flex>
                 <Stack direction={"row"} spacing={6}>
-                  <SocialButton label={"Facebook"} href={"https://www.facebook.com/bestbuy"}>
+                  <SocialButton
+                    label={"Facebook"}
+                    href={"https://www.facebook.com/bestbuy"}
+                  >
                     <FaFacebookF />
                   </SocialButton>
-                  <SocialButton label={"Twitter"} href={"https://twitter.com/BestBuy"}>
+                  <SocialButton
+                    label={"Twitter"}
+                    href={"https://twitter.com/BestBuy"}
+                  >
                     <FaTwitter />
                   </SocialButton>
-                  <SocialButton label={"Instagram"} href={"https://www.instagram.com/bestbuy/"}>
+                  <SocialButton
+                    label={"Instagram"}
+                    href={"https://www.instagram.com/bestbuy/"}
+                  >
                     <FaInstagram />
                   </SocialButton>
-                  <SocialButton label={"Printerest"} href={"https://in.pinterest.com/bestbuy/"}>
+                  <SocialButton
+                    label={"Printerest"}
+                    href={"https://in.pinterest.com/bestbuy/"}
+                  >
                     <FaPinterestP />
                   </SocialButton>
-                  <SocialButton label={"YouTube"} href={"https://www.youtube.com/user/bestbuy"}>
+                  <SocialButton
+                    label={"YouTube"}
+                    href={"https://www.youtube.com/user/bestbuy"}
+                  >
                     <FaYoutube />
                   </SocialButton>
                 </Stack>
@@ -199,39 +226,46 @@ export const Footer = () => {
             </Flex>
           </Stack>
         </SimpleGrid>
-        <Text>
+        <Text fontSize={{base:10,md:14,lg:16}}>
           How was your experience?{" "}
           <Link to="#">Give feedback about our website</Link>
         </Text>
       </Container>
 
       <Box
-      borderTop={'1px solid'}
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
-      p={'1%'}>
-      <Container
-        as={Stack}
-        maxW={'10xl'}
-        py={4}
-        p='1%'
-        direction={{ base: 'column', md: 'row' }}
-        spacing={4}
-        justify={{ base: 'space-around', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}>
-        <Stack direction={'row'} spacing={6}>
-          <Link href={'#'}>Accessibility</Link>
-          <Link href={'#'}>Terms & Conditions</Link>
-          <Link href={'#'}>Privacy</Link>
-          <Link href={'#'}>Interest-Based Ads</Link>
-          <Link href={'#'}>California Privacy Rights</Link>
-          <Link href={'#'}>Do Not Sell My Personal Information</Link>
-          <Link href={'#'}>California Supply Chain Transparancy Act </Link>
-        </Stack>
-       
-      </Container>
-      <Text>In-store pricing may vary. Prices and offers are subject to change. © 2022 Best Buy. All rights reserved. BEST BUY, the BEST BUY logo, the tag design, and MY BEST BUY are trademarks of Best Buy and its affiliated companies.</Text>
-    </Box>
+        borderTop={"1px solid"}
+        bg={useColorModeValue("gray.50", "gray.900")}
+        color={useColorModeValue("gray.700", "gray.200")}
+        p={"1%"}
+      >
+        <Container
+          as={Stack}
+          maxW={"10xl"}
+          py={4}
+          p="1%"
+          direction={{ base: "column", md: "row" }}
+          spacing={4}
+          justify={{ base: "space-around", md: "space-between" }}
+          align={{ base: "center", md: "center" }}
+          fontSize={{ base: 10, md: 14, lg: 16 }}
+        >
+          <Stack direction={"row"} spacing={6}>
+            <Link href={"#"}>Accessibility</Link>
+            <Link href={"#"}>Terms & Conditions</Link>
+            <Link href={"#"}>Privacy</Link>
+            <Link href={"#"}>Interest-Based Ads</Link>
+            <Link href={"#"}>California Privacy Rights</Link>
+            <Link href={"#"}>Do Not Sell My Personal Information</Link>
+            <Link href={"#"}>California Supply Chain Transparancy Act </Link>
+          </Stack>
+        </Container>
+        <Text fontSize={{ base: 10, md: 14, lg: 16 }}>
+          In-store pricing may vary. Prices and offers are subject to change. ©
+          2022 Best Buy. All rights reserved. BEST BUY, the BEST BUY logo, the
+          tag design, and MY BEST BUY are trademarks of Best Buy and its
+          affiliated companies.
+        </Text>
+      </Box>
     </Box>
   );
 };
