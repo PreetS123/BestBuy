@@ -831,8 +831,20 @@ export const Home = () => {
           Related items you've viewed
         </Heading>
         <Divider />
-        <Flex h={{ base: 250, lg: 300 }} p={2} gap="5px">
-          <Flex direction={"column"} align="center" justify="center">
+        <Flex 
+            height={{ base: "fit-content", md: 300, lg: 300 }}
+            gap={{ base: "10px", md: "15px", lg: "20px" }}
+            p={4}
+            justify={"space-around"}
+            >
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -849,7 +861,14 @@ export const Home = () => {
               $39.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
                flex={3}
               w={"70%"}
@@ -863,7 +882,14 @@ export const Home = () => {
               $799.00
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex 
+           direction={"column"}
+           alignItems={"center"}
+           justify={"space-around"}
+           h={"full"}
+           border={"1px solid"}
+           borderColor="gray.200"
+           fontSize={{ base: "10px", md: "15px", lg: "16px" }}>
             <Image
               flex={3}
               w={"70%"}
@@ -880,7 +906,14 @@ export const Home = () => {
               $59.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -897,7 +930,14 @@ export const Home = () => {
               $29.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -911,7 +951,14 @@ export const Home = () => {
               $599.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
             flex={3}
               h={{ base: "40%", lg: "60%" }}
@@ -929,7 +976,14 @@ export const Home = () => {
               $49.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
             flex={3}
               h={{ base: "40%", lg: "60%" }}
@@ -953,8 +1007,20 @@ export const Home = () => {
           Trending deals
         </Heading>
         <Divider />
-        <Flex h={{ base: 250, lg: 300 }} p={2}>
-          <Flex p={2} direction={"column"}>
+        <Flex 
+          height={{ base: "fit-content", md: 300, lg: 300 }}
+          gap={{ base: "10px", md: "15px", lg: "20px" }}
+          p={4}
+          justify={"space-around"}
+        >
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -968,7 +1034,14 @@ export const Home = () => {
               $39.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -982,7 +1055,14 @@ export const Home = () => {
               $179.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -998,7 +1078,14 @@ export const Home = () => {
               $999.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -1012,7 +1099,15 @@ export const Home = () => {
               $399.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex
+           direction={"column"}
+           alignItems={"center"}
+           justify={"space-around"}
+           h={"full"}
+           border={"1px solid"}
+           borderColor="gray.200"
+           fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+           >
             <Image
               flex={3}
               w={"70%"}
@@ -1028,7 +1123,14 @@ export const Home = () => {
               $189.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -1044,7 +1146,14 @@ export const Home = () => {
               $149.99
             </Text>
           </Flex>
-          <Flex p={2} direction={"column"}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -1170,8 +1279,21 @@ export const Home = () => {
       >
         <Heading fontSize={22}>Featured Products</Heading>
         <Divider />
-        <Flex h={{base:'fit-content',lg:300}} p={2}>
-          <Flex p={2} direction={"column"} fontSize={{base:8,md:14,lg:18}}>
+        <Flex 
+          height={{ base: "fit-content", md: 300, lg: 300 }}
+          gap={{ base: "10px", md: "15px", lg: "20px" }}
+          p={4}
+          justify={"space-around"}
+        >
+          <Flex
+           direction={"column"}
+           alignItems={"center"}
+           justify={"space-around"}
+           h={"full"}
+           border={"1px solid"}
+           borderColor="gray.200"
+           fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+           >
             <Image
               flex={3}
               w={"70%"}
@@ -1183,7 +1305,15 @@ export const Home = () => {
             </Text>
             <Text flex={1} >$539.99</Text>
           </Flex>
-          <Flex p={2} direction={"column"} fontSize={{base:8,md:14,lg:18}}>
+          <Flex
+           direction={"column"}
+           alignItems={"center"}
+           justify={"space-around"}
+           h={"full"}
+           border={"1px solid"}
+           borderColor="gray.200"
+           fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+           >
             <Image
              flex={3}
               w={"70%"}
@@ -1195,7 +1325,15 @@ export const Home = () => {
             </Text>
             <Text flex={1}>$279.99</Text>
           </Flex>
-          <Flex p={2} direction={"column"} fontSize={{base:8,md:14,lg:18}}>
+          <Flex
+           direction={"column"}
+           alignItems={"center"}
+           justify={"space-around"}
+           h={"full"}
+           border={"1px solid"}
+           borderColor="gray.200"
+           fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+          >
             <Image
               flex={3}
               w={"70%"}
@@ -1207,7 +1345,14 @@ export const Home = () => {
             </Text>
             <Text flex={1}>$349.99</Text>
           </Flex>
-          <Flex p={2} direction={"column"} fontSize={{base:8,md:14,lg:18}}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -1219,7 +1364,14 @@ export const Home = () => {
             </Text>
             <Text flex={1}>$1399.99</Text>
           </Flex>
-          <Flex p={2} direction={"column"} fontSize={{base:8,md:14,lg:18}}>
+          <Flex  direction={"column"}
+            alignItems={"center"}
+            justify={"space-around"}
+            h={"full"}
+            border={"1px solid"}
+            borderColor="gray.200"
+            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+            >
             <Image
               flex={3}
               w={"70%"}
@@ -1230,7 +1382,15 @@ export const Home = () => {
             </Text>
             <Text flex={1}>$27.99</Text>
           </Flex>
-          <Flex p={2} direction={"column"} fontSize={{base:8,md:14,lg:18}}>
+          <Flex
+           direction={"column"}
+           alignItems={"center"}
+           justify={"space-around"}
+           h={"full"}
+           border={"1px solid"}
+           borderColor="gray.200"
+           fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+          >
             <Image
               flex={3}
               w={"70%"}
@@ -1242,7 +1402,15 @@ export const Home = () => {
             </Text>
             <Text flex={1}>$99.99</Text>
           </Flex>
-          <Flex p={2} direction={"column"} fontSize={{base:8,md:14,lg:18}}>
+          <Flex 
+           direction={"column"}
+           alignItems={"center"}
+           justify={"space-around"}
+           h={"full"}
+           border={"1px solid"}
+           borderColor="gray.200"
+           fontSize={{ base: "10px", md: "15px", lg: "16px" }}
+          >
             <Image
               flex={3}
               w={"70%"}
