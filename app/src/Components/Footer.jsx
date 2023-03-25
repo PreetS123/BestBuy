@@ -59,6 +59,7 @@ export const Footer = () => {
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
+      style={{border:'1px solid black'}}
     >
       <Container
         as={Stack}
@@ -239,10 +240,10 @@ export const Footer = () => {
         p={"1%"}
       >
         <Container
+          display={{base:'none',lg:'block'}}
           as={Stack}
           maxW={"10xl"}
           py={4}
-          p="1%"
           direction={{ base: "column", md: "row" }}
           spacing={4}
           justify={{ base: "space-around", md: "space-between" }}
@@ -256,7 +257,7 @@ export const Footer = () => {
             <Link href={"#"}>Interest-Based Ads</Link>
             <Link href={"#"}>California Privacy Rights</Link>
             <Link href={"#"}>Do Not Sell My Personal Information</Link>
-            <Link href={"#"}>California Supply Chain Transparancy Act </Link>
+            <Link href={"#"} display={{base:'none',md:'block',lg:'block'}}>California Supply Chain Transparancy Act </Link>
           </Stack>
         </Container>
         <Text fontSize={{ base: 10, md: 14, lg: 16 }}>
