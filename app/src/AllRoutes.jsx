@@ -15,7 +15,7 @@ import { CheckOut } from './Pages/Checkoutpage/CheckOut'
 
 export const AllRoutes = () => {
   return (
-    <div>
+    <div style={{width:'100%'}}>
         <Navbar/>
            {/* <Card/> */}
         <Routes>

@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  HStack,
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -43,7 +44,11 @@ var tppicks = [
 
 export const Home = () => {
   return (
-    <Box style={{ width: "100%", boder: "1px solid red" }}>
+    <Box 
+    style={{ 
+      width: "100%", 
+      // border:"5px solid red" 
+      }}>
       {/* first box  */}
       <Flex
         direction={{ base: "column", md: "row", lg: "row" }}
@@ -263,51 +268,47 @@ export const Home = () => {
 
       {/* 3rd div starts from here */}
 
-      <div
-        style={{
-          width: "90%",
-          height: "105px",
-          display: "grid",
-          gridTemplateColumns: "repeat(2,1fr)",
-          gap: "20px",
-          justifyContent: "space-around",
-          fontWeight: "500",
-          fontSize: "20px",
-          margin: "20px auto",
-        }}
+      <HStack
+        spacing='20px'
+        mb={2}
+        p={2}
       >
-        <div
+        <Box
+          w={{base:'100%',lg:'50%'}}
+
           style={{
             display: "flex",
             backgroundColor: "rgb(196,196,196)",
             alignItems: "center",
             justifyContent: "center",
           }}
+          
         >
-          <div
+           <Box
             style={{
               display: "flex",
               flexDirection: "row",
               gap: "50px",
             }}
           >
-            <div>
+            <Box>
               <img
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/GL-65963-confident-210831-c34d2a74-8b79-41cd-8161-b9987666f7d6.png;maxHeight=72;maxWidth=72"
                 alt=""
               />
-            </div>
+            </Box>
 
-            <div>
+            <Box p={2}>
               {" "}
               <Heading fontSize={15}>Shop safely and confidently</Heading>
               <Text fontSize={12} color={"blue"}>
                 See our safety procedure
               </Text>
-            </div>
-          </div>
-        </div>
-        <div
+            </Box>
+           </Box>
+        </Box>
+        <Box
+          w={{base:'100%',lg:'50%'}}
           style={{
             display: "flex",
             backgroundColor: "rgb(196,196,196)",
@@ -315,30 +316,30 @@ export const Home = () => {
             justifyContent: "center",
           }}
         >
-          <div
+          <Box
             style={{
               display: "flex",
               flexDirection: "row",
               gap: "50px",
             }}
           >
-            <div>
+            <Box>
               <img
                 src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/GL-65963-expert-210831-70c599ed-fc34-47d8-9b93-85f899d93c8f.png;maxHeight=72;maxWidth=72"
                 alt=""
               />
-            </div>
+            </Box>
 
-            <div>
+            <Box p={2}>
               {" "}
               <Heading fontSize={15}>Get help shopping from home.</Heading>
               <Text fontSize={12} color={"blue"}>
                 Shop with an Expert
               </Text>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Box>
+          </Box>
+        </Box>
+      </HStack>
 
       {/* 4th div starts from here  */}
 

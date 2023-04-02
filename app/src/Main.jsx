@@ -11,7 +11,7 @@ import axios from 'axios'
 
 export const Main = () => {
   return (
-    <div>
+    <div style={{width:'100%'}}>
       <Provider store={store}>
       <AllRoutes/>
       </Provider>

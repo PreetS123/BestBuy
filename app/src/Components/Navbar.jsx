@@ -21,7 +21,14 @@ import { FaAngleDown, FaArrowRight, FaBars, FaSearch } from "react-icons/fa";
 
 export const Navbar = () => {
   return (
-    <Box marginBottom={"30px"} fontSize={{ base: 8, sm: 12, md: 14, lg: 18 }}>
+    <Box
+      marginBottom={"30px"}
+      style={{
+        width: "100%",
+        // border:'5px solid red'
+      }}
+      fontSize={{ base: 8, sm: 12, md: 14, lg: 18 }}
+    >
       <Flex
         bg={useColorModeValue("#0944B4 ", "#0944B4 ")}
         color={useColorModeValue("white.600", "white")}
