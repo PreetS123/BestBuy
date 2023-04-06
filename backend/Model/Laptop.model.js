@@ -11,7 +11,7 @@ const laptopSchema = new mongoose.Schema({
   shipping: { type: String, required: true },
   price: { type: String, required: true },
   print: { type: String, required: true },
-  offer: { type: String, required: true },
+  offer: { type: String, required: false },
 });
 
 const laptopModel = mongoose.model("laptopdata", laptopSchema);
