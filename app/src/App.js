@@ -4,7 +4,7 @@ import { Main } from './Main';
 
 function App() {
   return (
-    <div className="App">
+    <div style={{width:'100%'}}>
         <Main />
     </div>
   );
