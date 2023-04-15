@@ -78,7 +78,7 @@ export const fetchTVDataFailure=(payload)=>({
 export const fetchTVData=(payload)=>{
     return (dispatch)=>{
         dispatch(fetchTVDataRequest());
-        Axios.get('/tvdata',{
+        Axios.get('/tv',{
             params:{
                 ...payload
             }
