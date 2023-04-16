@@ -24,7 +24,7 @@ export const CartPage = () => {
 
   const deleteCart = (id) => {
     axios
-      .delete(`https://database-bestbuy.herokuapp.com/cart/${id}`)
+      .delete(`http://localhost:8080/cart/${id}`)
       .then((res) => {
         const deleted = cart.filter((el) => el.id !== id);
         setCartData(deleted);
@@ -38,18 +38,18 @@ export const CartPage = () => {
     let cartTotal= cart.reduce((acc,item)=>{
       return acc+ item.price;
     },0)
-    console.log('totalval',cartTotal);
+    // console.log('totalval',cartTotal);
 
      let tax= Math.round(cartTotal*0.18);
 
      let printTotal= cart.reduce((acc,item)=>{
        return acc+item.print;
      },0)
-     console.log('printval',printTotal);
+    //  console.log('printval',printTotal);
    
      let saving=printTotal-cartTotal;
       
-     console.log(value);
+    //  console.log(value);
   return (
     <>
       <Flex flexDirection={"row"} gap="20px" bg={"gray.50"} w={'90%'} m={'auto'}>
@@ -93,7 +93,7 @@ export const CartPage = () => {
           <Stack>
             <Flex justify={"space-around"}>
               <Heading fontSize={16}>Total</Heading>
-              <Heading fontSize={16}>${(cartTotal+tax).toFixed(2)}</Heading>
+              <Heading fontSize={16}>${(cartTotal+tax)}</Heading>
             </Flex>
             <Button bg={"yellow"}>
               <Center>

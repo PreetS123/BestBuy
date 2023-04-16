@@ -1,37 +1,61 @@
-import { Button, Heading, Image, Select, Text ,Flex,Stack, Center} from "@chakra-ui/react";
+import {
+  Button,
+  Heading,
+  Image,
+  Select,
+  Text,
+  Flex,
+  Stack,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 
-
-
-export const CartCard = ({ id,image,desc,pickup,shipping,price,saving,print,deleteCart,setValue }) => {
-  
+export const CartCard = ({
+  _id,
+  image,
+  desc,
+  price,
+  deleteCart,
+  setValue,
+}) => {
   return (
-    <Center border={'1px solid'} borderColor={'gray.300'} bg={'white'} fontSize={{base:'10px',md:'18px',lg:'18px'}}>
-      <Flex w={'80%'} h={'250px'} justify={'space-evenly'} gap='20px' p={4} >
-        <Stack flex={2}>
-          <Image maxH={'200px'} src={image} />
+    <VStack
+      border={"1px solid"}
+      borderColor={"gray.300"}
+      bg={"white"}
+      fontSize={{ base: 8, md: 10, lg: 14 }}
+      p={2}
+    >
+      <Flex
+        w={"100%"}
+        h={"200px"}
+        justify={"space-between"}
+        gap="20px"
+        p={2}
+        // style={{ border: "1px solid red" }}
+      >
+        <Stack flex={3} align='center' justifyContent={'space-between'} >
+          <Image h={"70%"} w={"200px"} src={image} />
+          <Text >{desc}</Text>
         </Stack>
-        <Stack flex={1}>
-          <Text>{desc}</Text>
-        </Stack>
-        <Flex direction={'column'}>
-            <Text><span fontWeight={'500'}>PickUp:</span>{pickup}</Text>
-            <Text><span fontWeight={'500'}>Shipping:</span>{shipping}</Text>
-        </Flex>
-        <Stack flex={1}>
-          <Select onChange={(e)=>setValue(e.target.value)} >
+        
+        <Stack flex={1} align='center' justify={'center'}>
+          <Select onChange={(e) => setValue(e.target.value)}>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
           </Select>
-          <button onClick={()=>deleteCart(id)}>Remove</button>
+          <Button onClick={() => deleteCart(_id)} bg={"#fff"}
+            color="maroon"
+            _hover={{
+              transform: "translateY(0px)",
+              bg: "fff",
+            }}>Remove</Button>
         </Stack>
-        <Stack>
-          <Heading fontSize={13}>${price}</Heading>
-          <Button bg={"maroon"}>Save ${saving}</Button>
-          <Text>Was ${print}</Text>
+        <Stack flex={1} align={'center'} justify={'center'}>
+          <Heading fontSize={{base:8,md:10,lg:13}}>Price: ${price}</Heading>
         </Stack>
       </Flex>
-    </Center>
+    </VStack>
   );
 };

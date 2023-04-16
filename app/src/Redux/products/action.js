@@ -102,16 +102,15 @@ export const addProductCartFailure=(payload)=>({
     payload
 })
 export const addProductCart=(payload)=>(dispatch)=>{
-    console.log("cartDetails:",payload);
+    console.log("addProductToCartFunctionInAction:",payload);
     dispatch(addProductCartRequest())
     Axios.post('/cart',payload)
     .then(r=>dispatch(addProductCartSuccess(r.data)))
     .catch(e=>dispatch(addProductCartFailure(e.data)))
 }
 
-export const getProductCartRequest=(payload)=>({
+export const getProductCartRequest=()=>({
     type:types.GET_PRODUCT_CART_REQUEST,
-    payload
 })
 export const getProductCartSuccess=(payload)=>({
     type:types.GET_PRODUCT_CART_SUCCESS,
@@ -122,7 +121,6 @@ export const getProductCartFailure=(payload)=>({
     payload
 })
 export const getProductCart=(payload)=>(dispatch)=>{
-    
     dispatch(getProductCartRequest())
     Axios.get('/cart',payload)
     .then(r=>dispatch(getProductCartSuccess(r.data)))
