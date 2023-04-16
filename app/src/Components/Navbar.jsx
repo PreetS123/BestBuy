@@ -136,7 +136,7 @@ export const Navbar = () => {
           </Stack>
         </Spacer>
         <Spacer>
-          <Stack>
+          <Stack display={{base:'none',md:'none',lg:'block'}}>
             <Flex gap="10px">
               <Input />
               <Button>

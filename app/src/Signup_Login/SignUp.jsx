@@ -24,7 +24,7 @@ export const SignUp = () => {
     })
   };
   const handleSubmit=()=>{
-    fetch("https://login-backend1.herokuapp.com/users", {
+    fetch("https://energetic-cyan-sea-urchin.cyclic.app/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

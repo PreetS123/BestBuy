@@ -141,136 +141,14 @@ export const Home = () => {
 
       {/* You viewed box starts here 2nd Box */}
 
-      <Stack bg={"white"} marginTop={"30px"} p={4}>
-        <Heading
-          fontSize={25}
-          borderBottom={"1px solid"}
-          borderColor={"gray.200"}
-          textDecoration={"underline"}
-        >
-          You viewed
-        </Heading>
-        <Text color="blue" cursor={"pointer"}>
-          Manage all your recently viewed items
-        </Text>
-        <Flex
-          height={{ base: "fit-content", md: 300, lg: 300 }}
-          gap={{ base: "10px", md: "15px", lg: "20px" }}
-          p={4}
-          justify={"space-around"}
-        >
-          <Flex
-            direction={"column"}
-            alignItems={"center"}
-            justify={"space-around"}
-            h={"full"}
-            border={"1px solid"}
-            borderColor="gray.200"
-            fontSize={{ base: "10px", md: "15px", lg: "16px" }}
-          >
-            <Image
-              // h={"60%"}
-              flex={3}
-              w={"70%"}
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6483/6483692_sd.jpg;maxHeight=400;maxWidth=400"
-            />
-            <Text flex={2} fontSize={{ base: "10px", md: "15px", lg: "18px" }}>
-              Google - Pixel 6 Pro 128GB - Stormy Black{" "}
-            </Text>
-          </Flex>
-          <Flex
-            direction={"column"}
-            alignItems={"center"}
-            justify={"space-around"}
-            h={"full"}
-            border={"1px solid"}
-            borderColor="gray.200"
-          >
-            <Image
-              flex={3}
-              w={"70%"}
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6458/6458645_sd.jpg;maxHeight=400;maxWidth=400"
-            />
-            <Text flex={2} fontSize={{ base: "10px", md: "15px", lg: "18px" }}>
-              Toshiba - 55" Class C350 Series LED 4K
-            </Text>
-          </Flex>
-          <Flex
-            direction={"column"}
-            alignItems={"center"}
-            justify={"space-around"}
-            h={"full"}
-            border={"1px solid"}
-            borderColor="gray.200"
-          >
-            <Image
-              flex={3}
-              w={"70%"}
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500470_sd.jpg;maxHeight=400;maxWidth=400"
-            />
-            <Text flex={2} fontSize={{ base: "10px", md: "15px", lg: "16px" }}>
-              TCL - 43" Class 4-Series 4K UHD HDR Smart
-            </Text>
-          </Flex>
-          <Flex
-            direction={"column"}
-            alignItems={"center"}
-            justify={"space-around"}
-            h={"full"}
-            border={"1px solid"}
-            borderColor="gray.200"
-          >
-            <Image
-              flex={3}
-              w={"70%"}
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4900/4900942_sd.jpg;maxHeight=214;maxWidth=278"
-            />
-            <Text flex={2} fontSize={{ base: "10px", md: "15px", lg: "16px" }}>
-              Apple - AirPods Pro{" "}
-            </Text>
-          </Flex>
-          <Flex
-            direction={"column"}
-            alignItems={"center"}
-            justify={"space-around"}
-            h={"full"}
-            border={"1px solid"}
-            borderColor="gray.200"
-          >
-            <Image
-              flex={3}
-              w={"70%"}
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5721/5721600_sd.jpg;maxHeight=214;maxWidth=278"
-            />
-            <Text flex={2} fontSize={{ base: "10px", md: "15px", lg: "16px" }}>
-              MacBook Air 13.3" Laptop
-            </Text>
-          </Flex>
-          <Flex
-            direction={"column"}
-            alignItems={"center"}
-            justify={"space-around"}
-            h={"full"}
-            border={"1px solid"}
-            borderColor="gray.200"
-          >
-            <Image
-              flex={3}
-              w={"70%"}
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-93899-iphone13-pro-pol_der-f73f557f-62fd-4937-9f7d-1aba33288b71.jpg;maxHeight=504;maxWidth=740"
-            />
-            <Text flex={2} fontSize={{ base: "10px", md: "15px", lg: "16px" }}>
-              iPhone 13 Pro{" "}
-            </Text>
-          </Flex>
-        </Flex>
-      </Stack>
+     
 
       {/* 3rd div starts from here */}
 
       <HStack
         spacing='20px'
         mb={2}
+        mt={4}
         p={2}
       >
         <Box

@@ -11,6 +11,7 @@ import { Tv } from './Pages/HomeTheater/Tv';
 import Login from './Signup_Login/Login'
 import { CartPage } from './Pages/CartPage';
 import { CheckOut } from './Pages/Checkoutpage/CheckOut'
+import { TopDeals } from './LandingPage/TopDeals'
 // import { Card } from './Pages/components/Card'
 
 export const AllRoutes = () => {
@@ -20,6 +21,7 @@ export const AllRoutes = () => {
            {/* <Card/> */}
         <Routes>
             <Route path='/' element={<Home/>}/>
+            <Route path='/topdeals' element={ <TopDeals/>} />
             <Route path='/phone' element={<Phone/>}/>
             <Route path='/tv' element={<Tv/>}/>
             <Route path='/computer' element={<Computer/>}/>

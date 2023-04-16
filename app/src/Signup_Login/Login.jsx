@@ -34,7 +34,7 @@ export default function Login() {
     })
   };
   const handleSubmit = async () => {
-    const data = await fetch("https://login-backend1.herokuapp.com/users")
+    const data = await fetch("https://energetic-cyan-sea-urchin.cyclic.app/login")
     .then(
       (data) => data.json()
     );
