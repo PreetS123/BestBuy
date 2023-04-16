@@ -31,21 +31,19 @@ export const CartPage = () => {
         setCartData(deleted);
         dispatch(getProductCart())
       });
-
-    // console.log("deleteproduct:",id)
   };
   // console.log(cart);
 
     
     let cartTotal= cart.reduce((acc,item)=>{
-      return acc+ item.price;
+      return acc+ Number(item.price);
     },0)
     // console.log('totalval',cartTotal);
 
      let tax= Math.round(cartTotal*0.18);
 
      let printTotal= cart.reduce((acc,item)=>{
-       return acc+item.print;
+       return acc+Number(item.print);
      },0)
     //  console.log('printval',printTotal);
    
@@ -75,19 +73,19 @@ export const CartPage = () => {
             <Heading fontSize={{base:'20px',md:'25px',lg:'28px'}}>Order Summary </Heading>
           </Center>
           <Stack textAlign={'center'}>
-            <Flex justify={"space-around"}>
+            <Flex justify={"space-between"}>
               <Text>Original Price</Text>
               <Text>${printTotal}</Text>
             </Flex>
-            <Flex justify={"space-around"}>
+            <Flex justify={"space-between"}>
               <Text>Savings</Text>
-              <Text>-${saving}</Text>
+              <Text>${saving}</Text>
             </Flex>
-            <Flex justify={"space-around"}>
+            <Flex justify={"space-between"}>
               <Text>Shipping</Text>
               <Text>FREE</Text>
             </Flex>
-            <Flex justify={"space-around"}>
+            <Flex justify={"space-between"}>
               <Text>Estimated Sales Tax</Text>
               <Text>${tax}</Text>
             </Flex>

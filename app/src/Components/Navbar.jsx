@@ -17,9 +17,12 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaAngleDown, FaArrowRight, FaBars, FaSearch } from "react-icons/fa";
-// import {GrCart} from 'react-icons/gr';
+import {FaShoppingCart} from 'react-icons/fa';
+import { useSelector } from "react-redux";
 
 export const Navbar = () => {
+  const cart = useSelector((store) => store.ecommerceData.cart);
+
   return (
     <Box
       marginBottom={"30px"}
@@ -56,7 +59,7 @@ export const Navbar = () => {
               <MenuButton px={4} py={2} bg={"#0944B4"} color="white">
                 <Flex fontSize={"4xl"} alignItems="center" gap="10px">
                   <Box>
-                    <FaBars width="14px" />
+                    <FaBars />
                   </Box>
                   <Text fontSize={{ base: 10, sm: 14, md: 16, lg: 18 }}>
                     {" "}
@@ -154,7 +157,14 @@ export const Navbar = () => {
               align={"center"}
               fontSize={{ base: 12, sm: 14, md: 16, lg: 18 }}
             >
-              <Link to="/cart">Cart</Link>
+              <Link to="/cart">
+                <Button disabled={cart.length===0} bg={'#0944B4'} _hover={{
+                  bg:'#0944B4',
+                  translate:'0px'
+                }} >
+                <FaShoppingCart style={{height:'35px',width:'30px'}}  />
+                </Button>
+              </Link>
             </Flex>
           </Stack>
         </Spacer>
