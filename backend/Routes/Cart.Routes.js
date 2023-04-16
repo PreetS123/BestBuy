@@ -26,16 +26,15 @@ cartRouter.get('/',async(req,res)=>{
     }
 })
 
-
-
-cartRouter.get('/:id',async(req,res)=>{
+cartRouter.delete('/:id',async(req,res)=>{
     try{
-         const cart = await cartModel.findById({_id:req.params.id})
+         const cart = await cartModel.findByIdAndDelete({_id:req.params.id});
          res.status(200).send(cart)
     }
     catch(err){
         res.status(500).send({message:err.message})
     }
 })
+
 
 module.exports = cartRouter
