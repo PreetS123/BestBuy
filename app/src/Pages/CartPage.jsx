@@ -10,9 +10,9 @@ import axios from "axios";
 import { useState } from "react";
 
 export const CartPage = () => {
+  const cart = useSelector((store) => store.ecommerceData.cart);
   const [cartData, setCartData] = useState([]);
   const [value, setValue] =useState(1);
-  const cart = useSelector((store) => store.ecommerceData.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,11 +23,13 @@ export const CartPage = () => {
   }, [dispatch]);
 
   const deleteCart = (id) => {
+    console.log('deleteCart',id);
     axios
       .delete(`http://localhost:8080/cart/${id}`)
       .then((res) => {
-        const deleted = cart.filter((el) => el.id !== id);
+        const deleted = cart.filter((el) => el._id !== id);
         setCartData(deleted);
+        dispatch(getProductCart())
       });
 
     // console.log("deleteproduct:",id)

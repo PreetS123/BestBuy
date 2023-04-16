@@ -10,18 +10,20 @@ import {
 } from "@chakra-ui/react";
 import { nanoid } from "nanoid";
 import { FaRegObjectGroup, FaTruck } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { addProductCart } from "../../Redux/products/action";
 
 export const Card = ({ product }) => {
   const uniqueid = nanoid();
-
+  console.log('product',product);
   // const params=useParams(id)
   const dispatch = useDispatch();
+  const cart = useSelector((store) => store.ecommerceData.cart);
+
 
   const addToCartHandler = (payload) => {
-    console.log(payload);
+    // console.log('item added to cart',payload);
     dispatch(addProductCart(payload));
   };
   return (
@@ -55,7 +57,7 @@ export const Card = ({ product }) => {
               <span>Model: </span> {product.model}
             </Box>
             <Box>
-              <span>SKU: </span> {uniqueid}
+              <span>SKU: </span> {product._id}
             </Box>
           </Flex>
           <Stack direction={"column"} mt={6}>
@@ -68,7 +70,8 @@ export const Card = ({ product }) => {
                   {" "}
                   <FaRegObjectGroup />{" "}
                 </Text>
-                <Heading fontSize={"16px"}>Pickup:</Heading> {product.pickup}
+                {/* <Heading fontSize={"16px"}>Pickup:</Heading> */}
+                 {product.pickup}
               </Flex>
               <Text color={"gray.400"}>
                 Act Fast - Only few left at your store!
@@ -80,7 +83,7 @@ export const Card = ({ product }) => {
                 <Text fontSize="2xl" marginRight={"5px"}>
                   <FaTruck />
                 </Text>
-                <Heading fontSize={"16px"}>Shipping: </Heading>{" "}
+                {/* <Heading fontSize={"16px"}>Shipping: </Heading>{" "} */}
                 {product.shipping}
               </Flex>
               <Text color={"gray.400"}>
@@ -123,6 +126,7 @@ export const Card = ({ product }) => {
               boxShadow: "lg",
             }}
             onClick={() => addToCartHandler(product)}
+            disabled={cart.length>4}
           >
             {" "}
             ADD TO CART
