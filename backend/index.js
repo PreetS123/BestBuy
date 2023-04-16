@@ -11,6 +11,7 @@ const tvRouter= require('./Routes/Tv.Routes');
 const phoneRouter= require('./Routes/Phone.Routes');
 const laptopRouter= require('./Routes/Laptop.Routes');
 const cartRouter= require('./Routes/Cart.Routes');
+const authRouter= require('./Routes/Auth.Routes');
 
 app.get('/',(req,res)=>{
     res.send('Welcome in Backend of Bestbuy_Clone!!')
@@ -19,6 +20,7 @@ app.use('/tv',tvRouter);
 app.use('/phone',phoneRouter);
 app.use('/laptop',laptopRouter);
 app.use('/cart',cartRouter);
+app.use('/',authRouter);
 
 const PORT = process.env.PORT || 8080
 

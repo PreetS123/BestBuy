@@ -8,7 +8,6 @@ const cartModel = require('../Model/Cart.model');
 cartRouter.post('/',async(req,res)=>{
      try{
          const cart = await cartModel.create(req.body)
-         cart.save();
          res.status(200).send(cart)
      }
      catch(err){
