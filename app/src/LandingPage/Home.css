@@ -1,4 +1,89 @@
+.homepage_firstbx_one{
+  background-image: url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-675686-tv-4f718dd9-a05c-43de-956e-74db036fdaa6.jpg;maxHeight=1456;maxWidth=1456");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 1px solid #E5E7E9;
+  flex:4;
+  
+}
+.homepage_firstbx_two{
+  flex:5;
+  /* border:1px solid red; */
+}
+.homepage_first_today_pick{
+  display: flex;
+  flex-direction: column;
+  gap: 10px !important;
+}
+.linkText{
+  color:#1985F1  !important;
+  font-size: 13px;
+}
+/* 2 nd box css starts here  */
+.homepage_secondbx{
+  background-image: url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/gl62892-tt-skinny-bg-lg-4ed9a87a-ca73-4e7a-8610-0f2159f2239b.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 98%;
+  height:180px !important;
+  margin: auto;
+  /* border: 1px solid red; */
+}
 
+/* 3rd div css starts here  */
+.homepage_thirdbx{
+ color:#fff;
+ margin: 15px 0px;
+}
+.homepage_thirdbx_one{
+  background-image: url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-659787-macbook-f3e75956-d989-49c7-96b5-45eb5d4e73f5.jpg;maxHeight=960;maxWidth=960");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #000 !important;
+  flex: 3;
+  height: 400px;
+}
+.homepage_thirdbx_two{
+  background-image: url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-673473-sustainability-38274bd3-3aad-45ce-8a01-36f2c3dd3aaa.jpg;maxHeight=960;maxWidth=960");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex: 3;
+  height: 400px;
+  text-align: center;
+}
+
+.homepage_thirdbx_three{
+  background-image: url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-510776_TopDealsGHP-LV-82d476b2-8238-447e-a5ba-031a67f017e0.jpg;maxHeight=960;maxWidth=960");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex: 3;
+  height: 400px;
+}
+.homepage_thirdbx_three button{
+  position: relative;
+  top: 65%;
+}
+.dealofday{
+  background-image: url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-588432-outlet-ea2b69c3-e9a7-4eee-a507-04c149472ab8.png;maxHeight=360;maxWidth=360");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 350px;
+  width: 300px;
+  border: 1px solid #E5E7E9;
+}
+.outletimage{
+  background-image: url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-588432-dotd-b913ea94-90d1-4907-85b8-2c08144776ee.png;maxHeight=400;maxWidth=400");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height:350px;
+  width: 300px;
+  border: 1px solid #E5E7E9;
+}
+
+
+
+
+/* 
 .first_parent{
     display: grid;
     gap: 30px;
@@ -62,4 +147,4 @@
         height: 150px;
       }
       
-  }
+  } */

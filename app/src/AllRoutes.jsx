@@ -12,15 +12,14 @@ import Login from './Signup_Login/Login'
 import { CartPage } from './Pages/CartPage';
 import { CheckOut } from './Pages/Checkoutpage/CheckOut'
 import { TopDeals } from './LandingPage/TopDeals'
-// import { Card } from './Pages/components/Card'
+import { HomeResign } from './LandingPage/HomeResign'
 
 export const AllRoutes = () => {
   return (
     <div style={{width:'100%'}}>
         <Navbar/>
-           {/* <Card/> */}
         <Routes>
-            <Route path='/' element={<Home/>}/>
+            <Route path='/' element={<HomeResign/>}/>
             <Route path='/topdeals' element={ <TopDeals/>} />
             <Route path='/phone' element={<Phone/>}/>
             <Route path='/tv' element={<Tv/>}/>

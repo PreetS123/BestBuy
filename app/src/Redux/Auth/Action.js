@@ -5,9 +5,8 @@ const signupRequest = () => ({
   type: types.SIGNUP_REQUEST,
 });
 
-const signupSuccess = (payload) => ({
+const signupSuccess = () => ({
   type: types.SIGNUP_SUCCESS,
-  payload,
 });
 
 const signupFailure = (payload) => ({
@@ -17,11 +16,11 @@ const signupFailure = (payload) => ({
 
 export const userSignup = (payload) => (dispatch) => {
   dispatch(signupRequest());
-  console.log("userSignup action file payload data", payload);
+  // console.log("userSignup action file payload data", payload);
   Axios.post("/user/signup", payload)
     .then((r) => {
       console.log("signupdata", r.data);
-      dispatch(signupSuccess(r.data));
+      dispatch(signupSuccess());
     })
     .catch((e) => dispatch(signupFailure(e.message)));
 };
@@ -51,3 +50,9 @@ export const userLogin = (payload) => (dispatch) => {
     })
     .catch((e) => dispatch(loginFailure(e.message)));
 };
+
+
+
+export const logoutApi=()=>(dispatch)=>{
+  dispatch({type:types.LOGOUT_SUCCESS});
+}
