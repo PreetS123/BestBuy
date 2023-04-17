@@ -19,8 +19,10 @@ import { FaApple, FaFingerprint } from "react-icons/fa";
 import { Center } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Login() {
+  const {isLoading,isError,token}=useSelector((state)=>state.auth);
   const [flag, setFlag]=useState(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({});
