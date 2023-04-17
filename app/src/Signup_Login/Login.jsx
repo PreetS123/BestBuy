@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   Flex,
   Box,
@@ -15,18 +15,18 @@ import {
 } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaFingerprint } from "react-icons/fa";
-
 import { Center } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../Redux/Auth/action";
 
 export default function Login() {
+  const dispatch=useDispatch();
   const {isLoading,isError,token}=useSelector((state)=>state.auth);
-  const [flag, setFlag]=useState(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({});
-  console.log(formData);
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,20 +35,9 @@ export default function Login() {
       [name]: value,
     })
   };
-  const handleSubmit = async () => {
-    const data = await fetch("https://energetic-cyan-sea-urchin.cyclic.app/login")
-    .then(
-      (data) => data.json()
-    );
-    data.map((e) => {
-      if (e.email === formData.email && e.password === formData.pass) {
-      //  let identify = e.firstname;
-        navigate("/");
-      }
-      else{
-        setFlag(!flag);
-      }
-    });
+  const handleSubmit = () => {
+    dispatch(userLogin(formData))
+    navigate('/')
   };
   return (
     <Flex
@@ -68,11 +57,11 @@ export default function Login() {
           p={8}
         >
           <Stack spacing={2}>
-            <FormControl id="email">
+            <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
               <Input type="email" name="email" onChange={handleChange} />
             </FormControl>
-            <FormControl id="password">
+            <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
               <Input type="password" name="pass" onChange={handleChange} />
             </FormControl>
@@ -99,9 +88,9 @@ export default function Login() {
               </Button>
             </Stack>
             <Box>
-              {flag ? (
+              {isError ? (
                 <Text>
-                  Looks like your email or passwordis incorrect . Try Again{" "}
+                  Looks like your email or password is incorrect. Try Again{" "}
                 </Text>
               ) : null}
             </Box>
