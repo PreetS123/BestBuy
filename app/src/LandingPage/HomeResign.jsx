@@ -414,6 +414,174 @@ export const HomeResign = () => {
           </Heading>
         </VStack>
       </Flex>
+
+      <Stack w={"98%"} m={'auto'} marginBottom="100px" marginTop={"30px"} p={2} border={'1px solid #E5E7E9'}>
+        <Heading fontSize={22}>Featured products for you</Heading>
+        <Flex
+          flexDirection={{ base: "column", lg: "row" }}
+          height={{ base: "fit-content", md: 300, lg: 300 }}
+          gap={"10px"}
+          p={4}
+          justify={"space-between"}
+        >
+          <Flex
+            direction={"column"}
+            alignItems={"center"}
+            justify={"space-between"}
+            h={"full"}
+            // border={"1px solid"}
+            // borderColor="gray.200"
+            p={2}
+          >
+            <Image
+              h={{ base: "40%", lg: "60%" }}
+              w={"70%"}
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398119_sd.jpg;maxHeight=250;maxWidth=225"
+            />
+            <Link to='#' className='linkText'>
+              Samsung - Galaxy 13.3" 4K Ultra HD Touch- Screen Chromebook -
+              Intel Core i7{" "}
+            </Link>
+            <Text
+              fontSize={20}
+              fontWeight={500}
+              style={{ verticalAlign: "bottom" }}
+            >
+              $539.99
+            </Text>
+          </Flex>
+          <Flex
+            direction={"column"}
+            alignItems={"center"}
+            justify={"space-between"}
+            h={"full"}
+            // border={"1px solid"}
+            // borderColor="gray.200"
+            p={2}
+          >
+            <Image
+              h={{ base: "40%", lg: "60%" }}
+              w={"70%"}
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6484/6484736_sd.jpg;maxHeight=250;maxWidth=225"
+            />
+            <Link to='#' className='linkText'>
+              Citizen - CZ Smart 44mm Black IP Stainlss Steel Case Hvbrid Heart
+              Rate
+            </Link>
+            <Text
+              fontSize={20}
+              fontWeight={500}
+              style={{ verticalAlign: "bottom" }}
+            >
+              $279.99
+            </Text>
+          </Flex>
+          <Flex
+            direction={"column"}
+            alignItems={"center"}
+            justify={"space-between"}
+            h={"full"}
+            // border={"1px solid"}
+            // borderColor="gray.200"
+            p={2}
+          >
+            <Image
+              h={{ base: "40%", lg: "60%" }}
+              w={"70%"}
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6502/6502273_sd.jpg;maxHeight=250;maxWidth=225"
+            />
+            <Link to='#' className='linkText'>
+              ario - Essential Sportlight 4 Camerass and Yard Sign,
+              Indoor/Outdoor
+            </Link>
+            <Text
+              fontSize={20}
+              fontWeight={500}
+              style={{ verticalAlign: "bottom" }}
+            >
+              $349.99
+            </Text>
+          </Flex>
+          <Flex
+            direction={"column"}
+            alignItems={"center"}
+            justify={"space-between"}
+            h={"full"}
+            // border={"1px solid"}
+            // borderColor="gray.200"
+            p={2}
+          >
+            <Image
+              h={{ base: "40%", lg: "60%" }}
+              w={"70%"}
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6502/6502943_sd.jpg;maxHeight=250;maxWidth=225"
+            />
+            <Link to='#' className='linkText'>
+              HP - Victua 15.6" Gaming Laptop - Intel Core i7-1265DH- 16GB
+              Memory
+            </Link>
+            <Text
+              fontSize={20}
+              fontWeight={500}
+              style={{ verticalAlign: "bottom" }}
+            >
+              $1399.99
+            </Text>
+          </Flex>
+          <Flex
+            direction={"column"}
+            alignItems={"center"}
+            justify={"space-between"}
+            h={"full"}
+            // border={"1px solid"}
+            // borderColor="gray.200"
+            p={2}
+          >
+            <Image
+              h={{ base: "40%", lg: "60%" }}
+              w={"70%"}
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6430/6430060_sd.jpg;maxHeight=250;maxWidth=225"
+            />
+            <Link to='#' className='linkText'>
+              Amazon - Echo dot (4th Gen) Smart speaker with Alexa - Charcol
+            </Link>
+            <Text
+              fontSize={20}
+              fontWeight={500}
+              style={{ verticalAlign: "bottom" }}
+            >
+              $27.99
+            </Text>
+          </Flex>
+          <Flex
+            direction={"column"}
+            alignItems={"center"}
+            justify={"space-between"}
+            h={"full"}
+            // border={"1px solid"}
+            // borderColor="gray.200"
+            p={2}
+          >
+            <Image
+              h={{ base: "40%", lg: "60%" }}
+              w={"70%"}
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6416/6416337_sd.jpg;maxHeight=250;maxWidth=225"
+            />
+            <Link to='#' className='linkText'>
+              Ario - Essential Spotlight Camera - indoor/Outdoor Wire-Free 1080
+              Security Camera
+            </Link>
+            <Text
+              fontSize={20}
+              fontWeight={500}
+              style={{ verticalAlign: "bottom" }}
+            >
+              $99.99
+            </Text>
+          </Flex>
+          
+        </Flex>
+      </Stack>
     </Box>
   );
 };

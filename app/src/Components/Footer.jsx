@@ -81,31 +81,31 @@ export const Footer = () => {
             >
               <Stack align={"flex-start"}>
                 <ListHeader>Order & Purchases</ListHeader>
-                <Link href={"#"}>Check Order Status</Link>
-                <Link href={"#"}>Shipping, Delivery & Pickup</Link>
-                <Link href={"#"}>Returns & Exchanges</Link>
-                <Link href={"#"}>Price Match Guarantee</Link>
-                <Link href={"#"}>Product Recalls</Link>
-                <Link href={"#"}>Trade-In Program</Link>
-                <Link href={"#"}>Gift Cards</Link>
+                <Link href={"#"} color='#1985F1'>Check Order Status</Link>
+                <Link href={"#"} color='#1985F1'>Shipping, Delivery & Pickup</Link>
+                <Link href={"#"} color='#1985F1'>Returns & Exchanges</Link>
+                <Link href={"#"} color='#1985F1'>Price Match Guarantee</Link>
+                <Link href={"#"} color='#1985F1'>Product Recalls</Link>
+                <Link href={"#"} color='#1985F1'>Trade-In Program</Link>
+                <Link href={"#"} color='#1985F1'>Gift Cards</Link>
               </Stack>
               <Stack align={"flex-start"}>
                 <ListHeader>Support & Services</ListHeader>
-                <Link href={"#"}>Visit our Support Center</Link>
-                <Link href={"#"}>Shop with an Expert</Link>
-                <Link href={"#"}>Schedule a Service</Link>
-                <Link href={"#"}>Manage an Appointment</Link>
-                <Link href={"#"}>Protection & Support Plans</Link>
-                <Link href={"#"}>Haul Away & Recycling</Link>
-                <Link href={"#"}>Contact Us</Link>
+                <Link href={"#"} color='#1985F1'>Visit our Support Center</Link>
+                <Link href={"#"} color='#1985F1'>Shop with an Expert</Link>
+                <Link href={"#"} color='#1985F1'>Schedule a Service</Link>
+                <Link href={"#"} color='#1985F1'>Manage an Appointment</Link>
+                <Link href={"#"} color='#1985F1'>Protection & Support Plans</Link>
+                <Link href={"#"} color='#1985F1'>Haul Away & Recycling</Link>
+                <Link href={"#"} color='#1985F1'>Contact Us</Link>
               </Stack>
               <Stack align={"flex-start"}>
                 <ListHeader>Partnerships</ListHeader>
-                <Link href={"#"}>Affiliate Program</Link>
-                <Link href={"#"}>Advertise with Us</Link>
-                <Link href={"#"}>Developers</Link>
-                <Link href={"#"}>Best Buy Health</Link>
-                <Link href={"#"}>Best Buy Education</Link>
+                <Link href={"#"} color='#1985F1'>Affiliate Program</Link>
+                <Link href={"#"} color='#1985F1'>Advertise with Us</Link>
+                <Link href={"#"} color='#1985F1'>Developers</Link>
+                <Link href={"#"} color='#1985F1'>Best Buy Health</Link>
+                <Link href={"#"} color='#1985F1'>Best Buy Education</Link>
               </Stack>
             </SimpleGrid>
             <SimpleGrid
@@ -116,25 +116,25 @@ export const Footer = () => {
             >
               <Stack align={"flex-start"}>
                 <ListHeader>Payment Options</ListHeader>
-                <Link href={"#"}>My Best Buy* Credit Card</Link>
-                <Link href={"#"}>Pay Your Bill at Citibank</Link>
-                <Link href={"#"}>Lease to Own</Link>
+                <Link href={"#"} color='#1985F1'>My Best Buy* Credit Card</Link>
+                <Link href={"#"} color='#1985F1'>Pay Your Bill at Citibank</Link>
+                <Link href={"#"} color='#1985F1'>Lease to Own</Link>
               </Stack>
               <Stack align={"flex-start"}>
                 <ListHeader>Rewards & Membership</ListHeader>
-                <Link href={"#"}>Best Buy Totaltech</Link>
-                <Link href={"#"}>My Best Buy</Link>
-                <Link href={"#"}>View Points & Certificates</Link>
-                <Link href={"#"}>Member Offers</Link>
+                <Link href={"#"} color='#1985F1'>Best Buy Totaltech</Link>
+                <Link href={"#"} color='#1985F1'>My Best Buy</Link>
+                <Link href={"#"} color='#1985F1'>View Points & Certificates</Link>
+                <Link href={"#"} color='#1985F1'>Member Offers</Link>
               </Stack>
               <Stack align={"flex-start"}>
                 <ListHeader>About Best Buy</ListHeader>
-                <Link href={"#"}>Corporate Information</Link>
-                <Link href={"#"}>Careers</Link>
-                <Link href={"#"}>
+                <Link href={"#"} color='#1985F1'>Corporate Information</Link>
+                <Link href={"#"} color='#1985F1'>Careers</Link>
+                <Link href={"#"} color='#1985F1'>
                   Corporate Responsibility & Sustainability
                 </Link>
-                <Link href={"#"}>Discover & Learn</Link>
+                <Link href={"#"} color='#1985F1'>Discover & Learn</Link>
               </Stack>
             </SimpleGrid>
           </Box>
@@ -251,13 +251,13 @@ export const Footer = () => {
           fontSize={{ base: 10, md: 14, lg: 16 }}
         >
           <Stack direction={"row"} spacing={6}>
-            <Link href={"#"}>Accessibility</Link>
-            <Link href={"#"}>Terms & Conditions</Link>
-            <Link href={"#"}>Privacy</Link>
-            <Link href={"#"}>Interest-Based Ads</Link>
-            <Link href={"#"}>California Privacy Rights</Link>
-            <Link href={"#"}>Do Not Sell My Personal Information</Link>
-            <Link href={"#"} display={{base:'none',md:'block',lg:'block'}}>California Supply Chain Transparancy Act </Link>
+            <Link href={"#"} color='#1985F1'>Accessibility</Link>
+            <Link href={"#"} color='#1985F1'>Terms & Conditions</Link>
+            <Link href={"#"} color='#1985F1'>Privacy</Link>
+            <Link href={"#"} color='#1985F1'>Interest-Based Ads</Link>
+            <Link href={"#"} color='#1985F1'>California Privacy Rights</Link>
+            <Link href={"#"} color='#1985F1'>Do Not Sell My Personal Information</Link>
+            <Link href={"#"} color='#1985F1' display={{base:'none',md:'block',lg:'block'}}>California Supply Chain Transparancy Act </Link>
           </Stack>
         </Container>
         <Text fontSize={{ base: 10, md: 14, lg: 16 }}>

@@ -4,7 +4,7 @@
   background-size: 100% 100%;
   border: 1px solid #E5E7E9;
   flex:4;
-  
+  min-height: 400px;
 }
 .homepage_firstbx_two{
   flex:5;
@@ -32,6 +32,7 @@
 
 /* 3rd div css starts here  */
 .homepage_thirdbx{
+  height: fit-content;
  color:#fff;
  margin: 15px 0px;
 }
@@ -41,14 +42,14 @@
   background-size: 100% 100%;
   color: #000 !important;
   flex: 3;
-  height: 400px;
+  height: 400px !important;
 }
 .homepage_thirdbx_two{
   background-image: url("https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-673473-sustainability-38274bd3-3aad-45ce-8a01-36f2c3dd3aaa.jpg;maxHeight=960;maxWidth=960");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   flex: 3;
-  height: 400px;
+  height: 400px !important;
   text-align: center;
 }
 
@@ -57,7 +58,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   flex: 3;
-  height: 400px;
+  height: 400px !important;
 }
 .homepage_thirdbx_three button{
   position: relative;
