@@ -42,6 +42,7 @@ export const Navbar = () => {
           backgroundColor: "#1D34C8",
           position: "sticky",
           top: 0,
+          zIndex:999,
         }}
       >
         <Flex w={"90%"} gap="10px" justify={"space-between"} align="center">
