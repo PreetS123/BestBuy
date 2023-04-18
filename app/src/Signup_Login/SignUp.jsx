@@ -14,14 +14,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import {userSignup} from '../Redux/Auth/action';
+import {userSignup} from '../Redux/Auth/Action';
 
 export const SignUp = () => {
   const navigate = useNavigate();
   const dispatch=useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState(false);
-  const {isLoading,isError,token}=useSelector((state)=>state.auth);
+  // const {isLoading,isError,token}=useSelector((state)=>state.auth);
   const [data, setData] = useState({});
   const handleChange = (e) => {
     const { name, value } = e.target;
