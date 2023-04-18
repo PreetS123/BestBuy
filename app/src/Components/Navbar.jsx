@@ -133,18 +133,7 @@ export const Navbar = () => {
             </Heading>
           </DrawerHeader>
           <DrawerBody>
-            <Flex alignItems="center" justify={"space-between"} h={"40px"}>
-              Deals <FaArrowRight />{" "}
-            </Flex>
-            <Flex alignItems="center" justify={"space-between"} h={"40px"}>
-              Support & Services <FaArrowRight />
-            </Flex>{" "}
-            <Flex alignItems="center" justify={"space-between"} h={"40px"}>
-              Brands <FaArrowRight />{" "}
-            </Flex>{" "}
-            <Flex alignItems="center" justify={"space-between"} h={"40px"}>
-              Featured <FaArrowRight />{" "}
-            </Flex>{" "}
+            
             <Flex align="center" h={"50px"}>
               Shop by Department
             </Flex>
@@ -170,6 +159,22 @@ export const Navbar = () => {
               {" "}
               <Link to="/camera"> Cameras, Camcarders & Drones </Link>
               <FaArrowRight />{" "}
+            </Flex>{" "}
+            <Flex align="center" h={"50px"}>
+              Customised Shoping
+            </Flex>
+            <Divider />
+            <Flex alignItems="center" justify={"space-between"} h={"40px"}>
+              Deals <FaArrowRight />{" "}
+            </Flex>
+            <Flex alignItems="center" justify={"space-between"} h={"40px"}>
+              Support & Services <FaArrowRight />
+            </Flex>{" "}
+            <Flex alignItems="center" justify={"space-between"} h={"40px"}>
+              Brands <FaArrowRight />{" "}
+            </Flex>{" "}
+            <Flex alignItems="center" justify={"space-between"} h={"40px"}>
+              Featured <FaArrowRight />{" "}
             </Flex>{" "}
           </DrawerBody>
         </DrawerContent>
