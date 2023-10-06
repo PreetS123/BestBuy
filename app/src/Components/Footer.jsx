@@ -11,7 +11,7 @@ import {
   useColorModeValue,
   Flex,
 } from "@chakra-ui/react";
-
+import {useLocation} from "react-router-dom";
 import {
   FaArrowRight,
   FaFacebookF,
@@ -55,12 +55,18 @@ const ListHeader = ({ children }) => {
 };
 
 export const Footer = () => {
+  const location= useLocation();
+  let pathname= location.pathname;
+  // console.log("pathname",pathname);
+  const bgWhite = useColorModeValue("white.500", "white.300");
+  const bg2=useColorModeValue("blackAlpha.100", "whiteAlpha.100");
+  
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
-      // style={{border:'1px solid black'}}
     >
+    {pathname!=="/login" && pathname!=="/signup"?(
       <Container
         as={Stack}
         p="4%"
@@ -142,14 +148,14 @@ export const Footer = () => {
             h='fit-content'
             align={"flex-start"}
             p="2%"
-            bg={useColorModeValue("white.500", "white.300")}
+            bg={bgWhite}
           >
             <Flex
               p="3%"
               h={"70%"}
               direction={"column"}
               justifyContent="space-around"
-              bg={useColorModeValue("white", "white")}
+              bg={bgWhite}
               border="1px solid rgb(196,196,196)"
               gap='10px'
             >
@@ -158,7 +164,7 @@ export const Footer = () => {
                 <Box>
                   <Input
                     placeholder={"Your email address"}
-                    bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+                    bg={bg2}
                     border={0}
                     _focus={{
                       bg: "whiteAlpha.300",
@@ -168,7 +174,7 @@ export const Footer = () => {
                 <Box>
                   <Input
                     type="submit"
-                    bg={useColorModeValue("blue", "blue")}
+                    bg={"blue"}
                     color="white"
                     border={0}
                     _focus={{
@@ -232,7 +238,7 @@ export const Footer = () => {
           <Link to="#">Give feedback about our website</Link>
         </Text>
       </Container>
-
+      ):""}
       <Box
         borderTop={"1px solid"}
         bg={useColorModeValue("gray.50", "gray.900")}
