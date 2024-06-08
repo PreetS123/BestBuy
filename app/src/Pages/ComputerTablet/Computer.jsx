@@ -1,7 +1,6 @@
-import { Box, Flex, Heading, Select, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Select, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { FilterCom } from "../components/FilterCom";
-import { nanoid } from "nanoid";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Card } from "../components/Card";
@@ -54,8 +53,8 @@ export const Computer = () => {
             </Select>
           </Box>
           <Flex flexWrap="wrap" justifyContent="space-around">
-            {laptop.map((product) => {
-              return <Card key={nanoid()} product={product} />;
+            {laptop.map((product,i) => {
+              return <Card key={i} product={product} />;
             })}
           </Flex>
         </Box>
