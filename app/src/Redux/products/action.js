@@ -134,3 +134,17 @@ export const sortTVDataL2H = () => ({
   export const sortTVDataH2L = () => ({
     type: types.SORT_TV_DATA_H2L
   });
+  export const sortPhoneDataL2H = () => ({
+    type: types.SORT_PHONE_DATA_L2H
+  });
+  
+  export const sortPhoneDataH2L = () => ({
+    type: types.SORT_PHONE_DATA_H2L
+  });
+  export const sortLaptopDataL2H = () => ({
+    type: types.SORT_LAPTOP_DATA_L2H
+  });
+  
+  export const sortLaptopDataH2L = () => ({
+    type: types.SORT_LAPTOP_DATA_H2L
+  });

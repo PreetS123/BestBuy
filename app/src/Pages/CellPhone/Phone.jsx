@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Card } from "../components/Card";
-import { fetchData } from "../../Redux/products/action";
+import { fetchData, sortPhoneDataH2L, sortPhoneDataL2H } from "../../Redux/products/action";
 
 export const Phone = () => {
   const phone = useSelector((store) => store.ecommerceData.phone);
@@ -19,7 +19,18 @@ export const Phone = () => {
       dispatch(fetchData(params));
     }
   }, [dispatch, phone?.length, searchParams]);
-  console.log(phone);
+  // console.log(phone);
+
+  const handleChangeSortingOption=(e)=>{
+    let val=e.target.value;
+    if (val === 'l2h') {
+      dispatch(sortPhoneDataL2H());
+    } else if (val === 'h2l') {
+      dispatch(sortPhoneDataH2L());
+    }else{
+      dispatch(fetchData());
+    }
+  }
   return (
     <>
       <Stack
@@ -37,17 +48,15 @@ export const Phone = () => {
         <Box flex={8}>
           <Box h={35} marginBottom={10} display={'flex'} gap='10px' alignItems={'center'} justifyContent={'end'}>
             <Text >Sort By : </Text>
-            <Select w={'20%'}  placeholder="Select option">
-              <option value="">Best Selling</option>
+            <Select w={'20%'}  placeholder="Select option" onChange={handleChangeSortingOption}>
+              <option value="all">All</option>
               <option value="l2h">Price: Low to High</option>
               <option value="h2l">Price: High to Low</option>
-              <option value="">Costomer Ratings</option>
-              <option value="">New Arrival</option>
             </Select>
           </Box>
           <Flex flexWrap="wrap" justifyContent="space-around">
-            {phone.map((product) => {
-              return <Card key={nanoid()} product={product} />;
+            {phone.map((product,i) => {
+              return <Card key={i} product={product} />;
             })}
           </Flex>
         </Box>

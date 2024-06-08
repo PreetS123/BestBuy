@@ -123,6 +123,26 @@ export const productReducer = (state = initState, action) => {
         ...state,
         tvdata: [...state.tvdata].sort((a, b) => b.price - a.price),
       };
+      case types.SORT_PHONE_DATA_L2H:
+      return {
+        ...state,
+        phone: [...state.phone].sort((a, b) => a.price - b.price),
+      };
+    case types.SORT_PHONE_DATA_H2L:
+      return {
+        ...state,
+        phone: [...state.phone].sort((a, b) => b.price - a.price),
+      };
+      case types.SORT_LAPTOP_DATA_L2H:
+      return {
+        ...state,
+        laptop: [...state.laptop].sort((a, b) => a.price - b.price),
+      };
+    case types.SORT_LAPTOP_DATA_H2L:
+      return {
+        ...state,
+        laptop: [...state.laptop].sort((a, b) => b.price - a.price),
+      };
     default:
       return state;
   }
