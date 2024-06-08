@@ -4,7 +4,7 @@ import { FilterCom } from "../components/FilterCom";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Card } from "../components/Card";
-import { fetchTVData } from "../../Redux/products/action";
+import { fetchTVData, sortTVDataH2L, sortTVDataL2H } from "../../Redux/products/action";
 
 export const Tv = () => {
   const tvdata = useSelector((store) => store.ecommerceData.tvdata);
@@ -19,6 +19,17 @@ export const Tv = () => {
     }
   }, [dispatch, tvdata?.length, searchParams]);
   console.log(tvdata);
+
+  const handleChangeSortingOption=(e)=>{
+    let val=e.target.value;
+    if (val === 'l2h') {
+      dispatch(sortTVDataL2H());
+    } else if (val === 'h2l') {
+      dispatch(sortTVDataH2L());
+    }else{
+      dispatch(fetchTVData());
+    }
+  }
   return (
     <>
       <Stack
@@ -36,8 +47,8 @@ export const Tv = () => {
         <Box flex={8}>
           <Box h={35} marginBottom={10} display={'flex'} gap='10px' alignItems={'center'} justifyContent={'end'}>
             <Text >Sort By : </Text>
-            <Select w={'20%'}  placeholder="Select option">
-              <option value="">Best Selling</option>
+            <Select w={'20%'}  placeholder="Select option" onChange={(e)=>handleChangeSortingOption(e)}>
+              <option value="all">ALL</option>
               <option value="l2h">Price: Low to High</option>
               <option value="h2l">Price: High to Low</option>
               <option value="">Costomer Ratings</option>

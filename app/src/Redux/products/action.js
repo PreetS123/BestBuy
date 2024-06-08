@@ -127,4 +127,10 @@ export const getProductCart=(payload)=>(dispatch)=>{
     .catch(e=>dispatch(getProductCartFailure(e.data)))
 }
 
-
+export const sortTVDataL2H = () => ({
+    type: types.SORT_TV_DATA_L2H
+  });
+  
+  export const sortTVDataH2L = () => ({
+    type: types.SORT_TV_DATA_H2L
+  });

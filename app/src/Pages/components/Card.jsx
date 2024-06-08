@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom";
 import { addProductCart } from "../../Redux/products/action";
 
 export const Card = ({ product }) => {
-  console.log('product',product);
+  // console.log('product',product);
   // const params=useParams(id)
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.ecommerceData.cart);
