@@ -8,14 +8,12 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { nanoid } from "nanoid";
 import { FaRegObjectGroup, FaTruck } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { addProductCart } from "../../Redux/products/action";
 
 export const Card = ({ product }) => {
-  const uniqueid = nanoid();
   console.log('product',product);
   // const params=useParams(id)
   const dispatch = useDispatch();
@@ -27,10 +25,10 @@ export const Card = ({ product }) => {
     dispatch(addProductCart(payload));
   };
   return (
-    <Flex w={"100%"} py={4}>
+    <Flex w={"90%"} py={4} >
       <Stack
-        w={{ sm: "100%", md: "100%" }}
-        height={{ sm: "476px", md: "30rem" }}
+        w={'100%'}
+        height={{ sm: "auto", md: "30rem" }}
         direction={{ base: "column", md: "row", sm: "row" }}
         bg={useColorModeValue("white", "gray.900")}
         borderTop="1px"
@@ -38,9 +36,9 @@ export const Card = ({ product }) => {
         padding={10}
         gap={6}
       >
-        <Flex flex={1}>
-          <Image objectFit="cover" boxSize="100%" src={product.image} />
-        </Flex>
+      <Flex flex={1}>
+      <Image objectFit="cover" w="100%" h="100%" src={product.image} />
+    </Flex>
         <Stack flex={1} flexDirection="column" p={1} pt={2}>
           <Text>Sponsered</Text>
 
@@ -49,16 +47,17 @@ export const Card = ({ product }) => {
           </Text>
           <Text>{product.count}</Text>
           <Flex
+            direction={{base:'column',sm:'row',md:'row'}}
             justifyContent={"space-around"}
             color={useColorModeValue("gray.700", "gray.400")}
             px={3}
           >
-            <Box>
-              <span>Model: </span> {product.model}
-            </Box>
-            <Box>
-              <span>SKU: </span> {product._id}
-            </Box>
+            <Text fontSize={{base:'16px',sm:'10px'}}>
+              <span style={{fontWeight:500}}>Model: </span> {product.model}
+            </Text>
+            <Text fontSize={{base:'16px',sm:'10px'}}>
+              <span style={{fontWeight:500}}>SKU: </span> {product._id.slice(0,12)}
+            </Text>
           </Flex>
           <Stack direction={"column"} mt={6}>
             <Heading fontSize={"20px"} color="green">
